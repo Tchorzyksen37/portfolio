@@ -31,6 +31,11 @@ header {
     margin: auto 2em;
 }
 
+header.p {
+    text-align: left;
+    margin: auto 2em;
+}
+
 section {
     margin: auto 1em 4em 2em;
 }
