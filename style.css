@@ -64,3 +64,9 @@ h3 {
 #mainLeft {
     border-right: 1px solid lightgray;
 }
+
+@media print {
+    .new-page {
+        page-break-before: always;
+    }
+}
