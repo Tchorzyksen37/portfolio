@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { exportToPdf } from '../utils/pdfExport';
-import { useLanguage } from '../context/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import './styles.css';
 
 const UniCv = () => {
-    const { language } = useLanguage();
+    const { t, i18n } = useTranslation();
     
     const handleExportPdf = () => {
-        exportToPdf('uni-cv-content', `Michal_Tchorzewski_${language === 'en' ? 'Academic' : 'Akademickie'}_CV`);
+        exportToPdf('uni-cv-content', `Michal_Tchorzewski_${i18n.language === 'en' ? 'Academic' : 'Akademickie'}_CV`);
     };
 
     return (
@@ -59,7 +59,7 @@ const UniCv = () => {
             <div className="col-sm">
                 <section>
 
-                    <h2>{language === 'en' ? 'CONTACT' : 'KONTAKT'}</h2>
+                    <h2>{t('cv.contact')}</h2>
 
                     <p>
                         <FontAwesomeIcon icon={faPhone} /> <a href="tel:+48511213765">+48 511 213 765</a>
@@ -78,7 +78,7 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2>{language === 'en' ? 'EDUCATION' : 'EDUKACJA'}</h2>
+                    <h2>{t('cv.education')}</h2>
                     <h3>Warsaw University of Technology</h3>
                     <p><b>Faculty of Electronics and Information Technology | 2016 - June 2022</b></p>
                     <p>
@@ -91,7 +91,7 @@ const UniCv = () => {
 
                 <section className="new-page">
 
-                    <h2>{language === 'en' ? 'WORK EXPERIENCE' : 'DOŚWIADCZENIE ZAWODOWE'}</h2>
+                    <h2>{t('cv.workExperience')}</h2>
 
                     <h3>Senior Software Engineer</h3>
                     <p><b>Visa</b> | April 2024 - Present</p>
@@ -118,7 +118,7 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2>{language === 'en' ? 'SKILLS' : 'UMIEJĘTNOŚCI'}</h2>
+                    <h2>{t('cv.skills')}</h2>
                     <p><b>Programming languages:</b> Java, Kotlin, Groovy, Python, Type Script, Java Script, SQL</p>
                     <p><b>Frameworks:</b> Spring, Angular</p>
                     <p><b>Test Frameworks:</b> Spock, JUnit</p>
@@ -134,35 +134,17 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2>{language === 'en' ? 'LANGUAGES' : 'JĘZYKI'}</h2>
-                    <p><b>{language === 'en' ? 'Polish' : 'Polski'}</b> {language === 'en' ? 'Native' : 'Ojczysty'}</p>
-                    <p><b>{language === 'en' ? 'English' : 'Angielski'}</b> C1</p>
-                    <p><b>{language === 'en' ? 'German' : 'Niemiecki'}</b> A2</p>
+                    <h2>{t('cv.languages')}</h2>
+                    <p><b>{t('cv.polish')}</b> {t('cv.native')}</p>
+                    <p><b>{t('cv.english')}</b> C1</p>
+                    <p><b>{t('cv.german')}</b> A2</p>
 
                 </section>
 
                 <section className="new-page">
 
-                    <h2>{language === 'en' ? 'INTERESTS' : 'ZAINTERESOWANIA'}</h2>
-                    {language === 'en' ? (
-                        <p>
-                            In my free time, I am active in the Student Sailing Club of Warsaw University of Technology (SKŻ). 
-                            I am licensed to operate inland and maritime yachts. My goal is to lead an independent sea voyage.
-                            My interests also include rollerblading and ice skating. From 2017 to 2019, I was a member of the Night Skating Team, 
-                            which organizes night rollerblading rides through the streets of Warsaw. In the evenings, 
-                            I also work on my own web application and solve various coding challenges like Advent of Code and tasks on the LeetCode platform.
-                            In summary, I enjoy learning new patterns, gaining knowledge, and sharing it with others.
-                        </p>
-                    ) : (
-                        <p>
-                            W wolnym czasie jestem aktywny w Studenckim Klubie Żeglarskim Politechniki Warszawskiej (SKŻ). 
-                            Posiadam uprawnienia do prowadzenia jachtów śródlądowych i morskich. Moim celem jest poprowadzenie samodzielnego rejsu morskiego.
-                            Moje zainteresowania obejmują również jazdę na rolkach i łyżwach. W latach 2017-2019 byłem członkiem Night Skating Team, 
-                            który organizuje nocne przejazdy na rolkach ulicami Warszawy. Wieczorami 
-                            pracuję również nad własną aplikacją internetową i rozwiązuję różne wyzwania programistyczne, takie jak Advent of Code i zadania na platformie LeetCode.
-                            Podsumowując, lubię uczyć się nowych wzorców, zdobywać wiedzę i dzielić się nią z innymi.
-                        </p>
-                    )}
+                    <h2>{t('cv.interests')}</h2>
+                    <p>{t('cv.interestsText')}</p>
 
                 </section>
 
@@ -173,7 +155,7 @@ const UniCv = () => {
         </div>
         <div className="export-button-container">
             <button className="export-button" onClick={handleExportPdf}>
-                <FontAwesomeIcon icon={faFileDownload} /> {language === 'en' ? 'Export as PDF' : 'Eksportuj jako PDF'}
+                <FontAwesomeIcon icon={faFileDownload} /> {t('cv.exportPdf')}
             </button>
         </div>
     </div>

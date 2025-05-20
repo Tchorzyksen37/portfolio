@@ -6,6 +6,7 @@ import UniCv from "./components/UniCv";
 import WorkCv from "./components/WorkCv"
 import Home from "./components/Home";
 import { LanguageProvider } from './context/LanguageContext';
+import './i18n';
 
 export default function App() {
   return (

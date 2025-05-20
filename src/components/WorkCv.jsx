@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { exportToPdf } from '../utils/pdfExport';
-import { useLanguage } from '../context/LanguageContext';
+import { useTranslation } from 'react-i18next';
 import './styles.css';
 
 const WorkCv = () => {
-    const { language } = useLanguage();
+    const { t, i18n } = useTranslation();
     
     const handleExportPdf = () => {
-        exportToPdf('work-cv-content', `Michal_Tchorzewski_${language === 'en' ? 'Professional' : 'Zawodowe'}_CV`);
+        exportToPdf('work-cv-content', `Michal_Tchorzewski_${i18n.language === 'en' ? 'Professional' : 'Zawodowe'}_CV`);
     };
 
     return (
@@ -25,22 +25,8 @@ const WorkCv = () => {
                     <hr />
                     <section>
 
-                        <h2>{language === 'en' ? 'ABOUT' : 'O MNIE'}</h2>
-                        <p>
-                            {language === 'en' ? 
-                            `I studied at the Faculty of Electronics
-                            and Information Technology on Warsaw University of Technology
-                            with a concentration in Computer Science. I'm a very dedicated
-                            and goal-oriented person. Once I choose to pursue a certain
-                            activity, I put in the effort to accomplish it with the best results
-                            possible. Moreover, I'm cooperative and a great team player.` : 
-                            `Studiowałem na Wydziale Elektroniki i Technik Informacyjnych
-                            Politechniki Warszawskiej ze specjalizacją w Informatyce.
-                            Jestem bardzo zaangażowaną i zorientowaną na cel osobą.
-                            Gdy decyduję się na podjęcie określonego działania,
-                            wkładam wysiłek, aby osiągnąć jak najlepsze rezultaty.
-                            Ponadto, jestem kooperatywny i świetnie pracuję w zespole.`}
-                        </p>
+                        <h2>{t('cv.about')}</h2>
+                        <p>{t('cv.aboutText')}</p>
 
                     </section>
                 </header>
@@ -52,7 +38,7 @@ const WorkCv = () => {
                 <div className="col-sm">
                     <section>
 
-                    <h2>{language === 'en' ? 'CONTACT' : 'KONTAKT'}</h2>
+                    <h2>{t('cv.contact')}</h2>
 
                         <p>
                             <FontAwesomeIcon icon={faPhone} /> <a href="tel:+48511213765">+48 511 213 765</a>
@@ -70,7 +56,7 @@ const WorkCv = () => {
                     </section>
                     <section>
 
-                        <h2>{language === 'en' ? 'SKILLS' : 'UMIEJĘTNOŚCI'}</h2>
+                        <h2>{t('cv.skills')}</h2>
                         <p>Java, Spring Boot, Groovy, Spock</p>
                         <p>TypeScript, Angular</p>
                         <p>Amazon Web Services (AWS)</p>
@@ -85,7 +71,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2>{language === 'en' ? 'EDUCATION' : 'EDUKACJA'}</h2>
+                        <h2>{t('cv.education')}</h2>
                         <h3>Warsaw University of Technology</h3>
                         <p><b>The Faculty of Electronics and Information Technology | 2016 - Jun 2022</b></p>
                         <p>Major in Computer Science with focus on Computer Systems and Networks. Professional title
@@ -95,7 +81,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2>{language === 'en' ? 'CERTIFICATION AND EXTERNAL TRAININGS' : 'CERTYFIKATY I SZKOLENIA ZEWNĘTRZNE'}</h2>
+                        <h2>{t('cv.certification')}</h2>
                         <p>Test Driven Development by Bottega</p>
                         <p>Scaled Agile, Inc. logo
                             Certified SAFe® 5 Practitioner</p>
@@ -103,10 +89,10 @@ const WorkCv = () => {
                     </section>
 
                     <section>
-                        <h2>{language === 'en' ? 'LANGUAGES' : 'JĘZYKI'}</h2>
-                        <p><b>{language === 'en' ? 'Polish' : 'Polski'}</b> {language === 'en' ? 'Native' : 'Ojczysty'}</p>
-                        <p><b>{language === 'en' ? 'English' : 'Angielski'}</b> {language === 'en' ? 'Professional working proficiency' : 'Biegły'}</p>
-                        <p><b>{language === 'en' ? 'German' : 'Niemiecki'}</b> {language === 'en' ? 'Elementary proficiency' : 'Podstawowy'}</p>
+                        <h2>{t('cv.languages')}</h2>
+                        <p><b>{t('cv.polish')}</b> {t('cv.native')}</p>
+                        <p><b>{t('cv.english')}</b> {t('cv.professional')}</p>
+                        <p><b>{t('cv.german')}</b> {t('cv.elementary')}</p>
                     </section>
 
                 </div>
@@ -114,7 +100,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2>{language === 'en' ? 'WORK EXPERIENCE' : 'DOŚWIADCZENIE ZAWODOWE'}</h2>
+                        <h2>{t('cv.workExperience')}</h2>
 
                         <h3>Regular Java Developer</h3>
                         <p><b>Circle K | Aug 2022 - Now</b></p>
@@ -164,7 +150,7 @@ const WorkCv = () => {
         </div>
         <div className="export-button-container">
             <button className="export-button" onClick={handleExportPdf}>
-                <FontAwesomeIcon icon={faFileDownload} /> {language === 'en' ? 'Export as PDF' : 'Eksportuj jako PDF'}
+                <FontAwesomeIcon icon={faFileDownload} /> {t('cv.exportPdf')}
             </button>
         </div>
     </div>
