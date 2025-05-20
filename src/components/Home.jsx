@@ -9,7 +9,7 @@ const Home = () => {
             <NeuralBackground />
             <div className="home-content">
                 <h1>Michał Tchórzewski</h1>
-                <h2>Software Engineer & AI Enthusiast</h2>
+                <h2>Software Engineer and AI Enthusiast</h2>
                 <p>Welcome to my portfolio website. Explore my professional journey and academic background.</p>
                 <div className="home-buttons">
                     <Link to="/work-cv" className="home-button">Professional CV</Link>
