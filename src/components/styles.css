@@ -37,8 +37,10 @@ main {
 
 header {
     text-align: center;
-    margin: auto 2em;
+    margin: auto;
     padding: 2em 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 header p {
@@ -48,8 +50,10 @@ header p {
 }
 
 section {
-    margin: auto 1em 3em 2em;
+    margin: auto 0 2em 0;
     padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 i {
@@ -245,14 +249,21 @@ li {
 
 .container {
     padding: 1em;
-    margin-bottom: 2em;
+    margin-bottom: 5em; /* Add more space for the fixed export button */
+    max-width: 960px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
 }
 
 /* Fix for equal width columns */
 .row {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 -15px;
+    margin: 0;
+    width: 100%;
 }
 
 .col-sm, .col-xl {
@@ -260,6 +271,7 @@ li {
     padding: 0 15px;
     min-width: 300px;
     box-sizing: border-box;
+    width: 50%;
 }
 
 @media (max-width: 768px) {
@@ -302,8 +314,12 @@ li {
 
 /* Export button styles */
 .export-button-container {
-    margin: 2em 0;
+    position: fixed;
+    bottom: 2em;
+    left: 0;
+    right: 0;
     text-align: center;
+    z-index: 100;
 }
 
 .export-button {

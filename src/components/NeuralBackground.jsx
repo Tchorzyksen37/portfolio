@@ -63,12 +63,12 @@ const NeuralBackground = () => {
         const dist = Math.sqrt(dx * dx + dy * dy);
         
         if (dist < 200) {
-          node.x += dx * 0.01;
-          node.y += dy * 0.01;
+          node.x += dx * 0.005; // Slower movement
+          node.y += dy * 0.005; // Slower movement
         } else {
           // Regular movement
-          node.x += node.vx;
-          node.y += node.vy;
+          node.x += node.vx * 0.5; // Slower movement
+          node.y += node.vy * 0.5; // Slower movement
           
           // Bounce off edges
           if (node.x < 0 || node.x > canvas.width) node.vx *= -1;

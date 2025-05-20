@@ -1,21 +1,16 @@
-import React, { createContext, useState, useContext, useEffect } from 'react';
+import React, { createContext, useContext } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  // Initialize language from localStorage or default to 'en'
-  const [language, setLanguage] = useState(() => {
-    const savedLanguage = localStorage.getItem('preferredLanguage');
-    return savedLanguage || 'en';
-  });
-
-  // Save language preference to localStorage when it changes
-  useEffect(() => {
-    localStorage.setItem('preferredLanguage', language);
-  }, [language]);
-
+  const { i18n } = useTranslation();
+  
+  const language = i18n.language;
+  
   const toggleLanguage = () => {
-    setLanguage(prevLang => prevLang === 'en' ? 'pl' : 'en');
+    const newLang = language === 'en' ? 'pl' : 'en';
+    i18n.changeLanguage(newLang);
   };
 
   return (
