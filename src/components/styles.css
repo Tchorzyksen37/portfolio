@@ -31,20 +31,14 @@ h3 {
 
 main {
     grid-template-columns: 40% 60%;
-    margin-top: 3em;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 2em;
+    margin-top: 1em;
+    padding: 1em;
 }
 
 header {
     text-align: center;
     margin: auto 2em;
     padding: 2em 0;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    border-radius: 8px 8px 0 0;
 }
 
 header p {
@@ -250,10 +244,7 @@ li {
 }
 
 .container {
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 2em;
+    padding: 1em;
     margin-bottom: 2em;
 }
 
