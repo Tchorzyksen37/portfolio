@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "main": "src/index.tsx",
-  "homepage": "https://tchorzyksen37.github.io/cv/",
+  "homepage": "https://tchorzyksen37.github.io/portfolio/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.7.2",
