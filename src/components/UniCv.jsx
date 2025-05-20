@@ -144,14 +144,25 @@ const UniCv = () => {
                 <section className="new-page">
 
                     <h2>{language === 'en' ? 'INTERESTS' : 'ZAINTERESOWANIA'}</h2>
-                    <p>
-                        In my free time, I am active in the Student Sailing Club of Warsaw University of Technology (SKŻ). 
-                        I am licensed to operate inland and maritime yachts. My goal is to lead an independent sea voyage.
-                        My interests also include rollerblading and ice skating. From 2017 to 2019, I was a member of the Night Skating Team, 
-                        which organizes night rollerblading rides through the streets of Warsaw. In the evenings, 
-                        I also work on my own web application and solve various coding challenges like Advent of Code and tasks on the LeetCode platform.
-                        In summary, I enjoy learning new patterns, gaining knowledge, and sharing it with others.
-                    </p>
+                    {language === 'en' ? (
+                        <p>
+                            In my free time, I am active in the Student Sailing Club of Warsaw University of Technology (SKŻ). 
+                            I am licensed to operate inland and maritime yachts. My goal is to lead an independent sea voyage.
+                            My interests also include rollerblading and ice skating. From 2017 to 2019, I was a member of the Night Skating Team, 
+                            which organizes night rollerblading rides through the streets of Warsaw. In the evenings, 
+                            I also work on my own web application and solve various coding challenges like Advent of Code and tasks on the LeetCode platform.
+                            In summary, I enjoy learning new patterns, gaining knowledge, and sharing it with others.
+                        </p>
+                    ) : (
+                        <p>
+                            W wolnym czasie jestem aktywny w Studenckim Klubie Żeglarskim Politechniki Warszawskiej (SKŻ). 
+                            Posiadam uprawnienia do prowadzenia jachtów śródlądowych i morskich. Moim celem jest poprowadzenie samodzielnego rejsu morskiego.
+                            Moje zainteresowania obejmują również jazdę na rolkach i łyżwach. W latach 2017-2019 byłem członkiem Night Skating Team, 
+                            który organizuje nocne przejazdy na rolkach ulicami Warszawy. Wieczorami 
+                            pracuję również nad własną aplikacją internetową i rozwiązuję różne wyzwania programistyczne, takie jak Advent of Code i zadania na platformie LeetCode.
+                            Podsumowując, lubię uczyć się nowych wzorców, zdobywać wiedzę i dzielić się nią z innymi.
+                        </p>
+                    )}
 
                 </section>
 
