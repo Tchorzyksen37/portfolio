@@ -1,12 +1,18 @@
 import React from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { exportToPdf } from '../utils/pdfExport';
 import './styles.css';
 
 const UniCv = () => {
+    const handleExportPdf = () => {
+        exportToPdf('uni-cv-content', 'Michal_Tchorzewski_Academic_CV');
+    };
+
     return (
-    <div className="container" style={{ maxWidth: "960px"}}>
+    <div className="cv-container">
+        <div id="uni-cv-content" className="container" style={{ maxWidth: "960px"}}>
     <div className="row">
         <div className="col-xl">
             <header id="header">
@@ -150,7 +156,13 @@ const UniCv = () => {
         </div>
     </main>
 
-</div>
+        </div>
+        <div className="export-button-container">
+            <button className="export-button" onClick={handleExportPdf}>
+                <FontAwesomeIcon icon={faFileDownload} /> Export as PDF
+            </button>
+        </div>
+    </div>
 )};
 
 export default UniCv;

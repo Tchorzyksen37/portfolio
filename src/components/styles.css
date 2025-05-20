@@ -1,43 +1,61 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 12px;
+    font-size: 14px;
     margin: auto;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f8f9fa;
 }
 
 h1 {
     font-size: 3em;
-    letter-spacing: .6em;
+    letter-spacing: .4em;
     padding-top: 1em;
-    padding-bottom: 1em;
+    padding-bottom: 0.5em;
+    color: #2c5364;
 }
 
 h2 {
-    font-size: 1.5em;
-    padding-bottom: 1em;
+    font-size: 1.8em;
+    padding-bottom: 0.8em;
+    color: #203a43;
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 1em;
 }
 
 h3 {
-    font-size: 1em;
-    padding-bottom: 1em;
+    font-size: 1.2em;
+    padding-bottom: 0.5em;
+    color: #0f2027;
 }
 
 main {
     grid-template-columns: 40% 60%;
     margin-top: 3em;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 2em;
 }
 
 header {
     text-align: center;
     margin: auto 2em;
+    padding: 2em 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 8px 8px 0 0;
 }
 
-header.p {
+header p {
     text-align: left;
     margin: auto 2em;
+    line-height: 1.8;
 }
 
 section {
-    margin: auto 1em 4em 2em;
+    margin: auto 1em 3em 2em;
+    padding: 0.5em;
 }
 
 i {
@@ -45,28 +63,169 @@ i {
 }
 
 p {
-    margin: .2em auto
+    margin: .5em auto;
+    color: #444;
 }
 
 hr {
     border: none;
-    background-color: lightgray;
+    background-color: #e0e0e0;
     height: 1px;
+    margin: 1em 0;
 }
 
 h1,
 h2,
 h3 {
-    font-weight: 100;
-    margin-bottom: 0;
+    font-weight: 300;
+    margin-bottom: 0.5em;
 }
 
 #mainLeft {
-    border-right: 1px solid lightgray;
+    border-right: 1px solid #e0e0e0;
+}
+
+a {
+    color: #2c5364;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0f2027;
+    text-decoration: underline;
+}
+
+ul {
+    padding-left: 1.5em;
+}
+
+li {
+    margin-bottom: 0.5em;
+}
+
+/* Home page styles */
+.home-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.home-content {
+    z-index: 1;
+    padding: 2em;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    max-width: 800px;
+}
+
+.home-content h1 {
+    color: white;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.5em;
+}
+
+.home-content h2 {
+    color: #e0e0e0;
+    border: none;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.home-content p {
+    color: #f8f9fa;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+}
+
+.home-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.home-button {
+    padding: 0.8em 1.5em;
+    background-color: #2c5364;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.home-button:hover {
+    background-color: #203a43;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    color: white;
+}
+
+/* CV container styles */
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 0;
+}
+
+/* Export button styles */
+.export-button-container {
+    margin: 2em 0;
+    text-align: center;
+}
+
+.export-button {
+    padding: 0.8em 1.5em;
+    background-color: #2c5364;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.export-button:hover {
+    background-color: #203a43;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 @media print {
     .new-page {
         page-break-before: always;
+    }
+    
+    .export-button-container {
+        display: none;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+    
+    main {
+        padding: 1em;
+    }
+    
+    .home-buttons {
+        flex-direction: column;
+        gap: 1em;
+    }
+    
+    .home-content {
+        padding: 1.5em;
     }
 }
