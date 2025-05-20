@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { exportToPdf } from '../utils/pdfExport';
+import { useLanguage } from '../context/LanguageContext';
 import './styles.css';
 
 const WorkCv = () => {
+    const { language } = useLanguage();
+    
     const handleExportPdf = () => {
-        exportToPdf('work-cv-content', 'Michal_Tchorzewski_Professional_CV');
+        exportToPdf('work-cv-content', `Michal_Tchorzewski_${language === 'en' ? 'Professional' : 'Zawodowe'}_CV`);
     };
 
     return (
