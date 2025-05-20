@@ -45,7 +45,7 @@ const WorkCv = () => {
                 <div className="col-sm">
                     <section>
 
-                    <h2>CONTACT</h2>
+                    <h2>{language === 'en' ? 'CONTACT' : 'KONTAKT'}</h2>
 
                         <p>
                             <FontAwesomeIcon icon={faPhone} /> <a href="tel:+48511213765">+48 511 213 765</a>
@@ -63,7 +63,7 @@ const WorkCv = () => {
                     </section>
                     <section>
 
-                        <h2>SKILLS</h2>
+                        <h2>{language === 'en' ? 'SKILLS' : 'UMIEJĘTNOŚCI'}</h2>
                         <p>Java, Spring Boot, Groovy, Spock</p>
                         <p>TypeScript, Angular</p>
                         <p>Amazon Web Services (AWS)</p>
@@ -78,7 +78,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2>EDUCATION</h2>
+                        <h2>{language === 'en' ? 'EDUCATION' : 'EDUKACJA'}</h2>
                         <h3>Warsaw University of Technology</h3>
                         <p><b>The Faculty of Electronics and Information Technology | 2016 - Jun 2022</b></p>
                         <p>Major in Computer Science with focus on Computer Systems and Networks. Professional title
@@ -88,7 +88,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2>CERTIFICATION AND EXTERNAL TRAININGS</h2>
+                        <h2>{language === 'en' ? 'CERTIFICATION AND EXTERNAL TRAININGS' : 'CERTYFIKATY I SZKOLENIA ZEWNĘTRZNE'}</h2>
                         <p>Test Driven Development by Bottega</p>
                         <p>Scaled Agile, Inc. logo
                             Certified SAFe® 5 Practitioner</p>
@@ -96,10 +96,10 @@ const WorkCv = () => {
                     </section>
 
                     <section>
-                        <h2>LANGUAGES</h2>
-                        <p><b>Polish</b> Native</p>
-                        <p><b>English</b> Professional working proficiency</p>
-                        <p><b>German</b> Elementary proficiency</p>
+                        <h2>{language === 'en' ? 'LANGUAGES' : 'JĘZYKI'}</h2>
+                        <p><b>{language === 'en' ? 'Polish' : 'Polski'}</b> {language === 'en' ? 'Native' : 'Ojczysty'}</p>
+                        <p><b>{language === 'en' ? 'English' : 'Angielski'}</b> {language === 'en' ? 'Professional working proficiency' : 'Biegły'}</p>
+                        <p><b>{language === 'en' ? 'German' : 'Niemiecki'}</b> {language === 'en' ? 'Elementary proficiency' : 'Podstawowy'}</p>
                     </section>
 
                 </div>
@@ -107,7 +107,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2>WORK EXPERIENCE</h2>
+                        <h2>{language === 'en' ? 'WORK EXPERIENCE' : 'DOŚWIADCZENIE ZAWODOWE'}</h2>
 
                         <h3>Regular Java Developer</h3>
                         <p><b>Circle K | Aug 2022 - Now</b></p>
@@ -157,7 +157,7 @@ const WorkCv = () => {
         </div>
         <div className="export-button-container">
             <button className="export-button" onClick={handleExportPdf}>
-                <FontAwesomeIcon icon={faFileDownload} /> Export as PDF
+                <FontAwesomeIcon icon={faFileDownload} /> {language === 'en' ? 'Export as PDF' : 'Eksportuj jako PDF'}
             </button>
         </div>
     </div>

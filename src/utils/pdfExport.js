@@ -9,21 +9,31 @@ export const exportToPdf = (elementId, filename) => {
     return;
   }
   
-  // Apply print-specific styles before capturing
-  const sections = element.querySelectorAll('section');
+  // Create a clone of the element to avoid modifying the original
+  const clone = element.cloneNode(true);
+  document.body.appendChild(clone);
+  clone.style.position = 'absolute';
+  clone.style.left = '-9999px';
+  clone.style.top = '-9999px';
+  
+  // Apply print-specific styles to the clone
+  const sections = clone.querySelectorAll('section');
   sections.forEach(section => {
     section.style.pageBreakInside = 'avoid';
+    section.style.marginBottom = '20px';
   });
   
-  const headings = element.querySelectorAll('h2, h3');
+  const headings = clone.querySelectorAll('h2, h3');
   headings.forEach(heading => {
     heading.style.pageBreakAfter = 'avoid';
+    heading.style.marginTop = '15px';
   });
   
   // Add margins for better PDF layout
-  element.style.padding = '15mm';
+  clone.style.padding = '15mm';
+  clone.style.width = '170mm'; // A4 width minus margins
   
-  html2canvas(element, {
+  html2canvas(clone, {
     scale: 2,
     useCORS: true,
     logging: false,
@@ -68,14 +78,8 @@ export const exportToPdf = (elementId, filename) => {
       heightLeft -= contentHeight;
     }
     
-    // Reset styles after capturing
-    element.style.padding = '';
-    sections.forEach(section => {
-      section.style.pageBreakInside = '';
-    });
-    headings.forEach(heading => {
-      heading.style.pageBreakAfter = '';
-    });
+    // Remove the clone from the DOM
+    document.body.removeChild(clone);
     
     pdf.save(`${filename}.pdf`);
   });
