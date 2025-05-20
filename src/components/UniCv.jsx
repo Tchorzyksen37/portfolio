@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { exportToPdf } from '../utils/pdfExport';
+import { useLanguage } from '../context/LanguageContext';
 import './styles.css';
 
 const UniCv = () => {
+    const { language } = useLanguage();
+    
     const handleExportPdf = () => {
-        exportToPdf('uni-cv-content', 'Michal_Tchorzewski_Academic_CV');
+        exportToPdf('uni-cv-content', `Michal_Tchorzewski_${language === 'en' ? 'Academic' : 'Akademickie'}_CV`);
     };
 
     return (
