@@ -3,12 +3,50 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { exportToPdf } from '../utils/pdfExport';
-import { Trans } from '@lingui/macro';
 import { useLanguage } from '../context/LanguageContext';
 import './styles.css';
 
 const WorkCv = () => {
     const { language } = useLanguage();
+    
+    const translations = {
+        en: {
+            about: "ABOUT",
+            contact: "CONTACT",
+            skills: "SKILLS",
+            education: "EDUCATION",
+            certification: "CERTIFICATION AND EXTERNAL TRAININGS",
+            languages: "LANGUAGES",
+            workExperience: "WORK EXPERIENCE",
+            exportPdf: "Export as PDF",
+            polish: "Polish",
+            english: "English",
+            german: "German",
+            native: "Native",
+            professional: "Professional working proficiency",
+            elementary: "Elementary proficiency",
+            aboutText: "I studied at the Faculty of Electronics and Information Technology on Warsaw University of Technology with a concentration in Computer Science. I'm a very dedicated and goal-oriented person. Once I choose to pursue a certain activity, I put in the effort to accomplish it with the best results possible. Moreover, I'm cooperative and a great team player."
+        },
+        pl: {
+            about: "O MNIE",
+            contact: "KONTAKT",
+            skills: "UMIEJĘTNOŚCI",
+            education: "EDUKACJA",
+            certification: "CERTYFIKATY I SZKOLENIA ZEWNĘTRZNE",
+            languages: "JĘZYKI",
+            workExperience: "DOŚWIADCZENIE ZAWODOWE",
+            exportPdf: "Eksportuj jako PDF",
+            polish: "Polski",
+            english: "Angielski",
+            german: "Niemiecki",
+            native: "Ojczysty",
+            professional: "Biegły",
+            elementary: "Podstawowy",
+            aboutText: "Studiowałem na Wydziale Elektroniki i Technik Informacyjnych Politechniki Warszawskiej ze specjalizacją w Informatyce. Jestem bardzo zaangażowaną i zorientowaną na cel osobą. Gdy decyduję się na podjęcie określonego działania, wkładam wysiłek, aby osiągnąć jak najlepsze rezultaty. Ponadto, jestem kooperatywny i świetnie pracuję w zespole."
+        }
+    };
+    
+    const t = translations[language];
     
     const handleExportPdf = () => {
         exportToPdf('work-cv-content', `Michal_Tchorzewski_${language === 'en' ? 'Professional' : 'Zawodowe'}_CV`);
@@ -26,8 +64,8 @@ const WorkCv = () => {
                     <hr />
                     <section>
 
-                        <h2><Trans id="cv.about" /></h2>
-                        <p><Trans id="cv.aboutText" /></p>
+                        <h2>{t.about}</h2>
+                        <p>{t.aboutText}</p>
 
                     </section>
                 </header>
@@ -39,7 +77,7 @@ const WorkCv = () => {
                 <div className="col-sm">
                     <section>
 
-                    <h2><Trans id="cv.contact" /></h2>
+                    <h2>{t.contact}</h2>
 
                         <p>
                             <FontAwesomeIcon icon={faPhone} /> <a href="tel:+48511213765">+48 511 213 765</a>
@@ -57,7 +95,7 @@ const WorkCv = () => {
                     </section>
                     <section>
 
-                        <h2><Trans id="cv.skills" /></h2>
+                        <h2>{t.skills}</h2>
                         <p>Java, Spring Boot, Groovy, Spock</p>
                         <p>TypeScript, Angular</p>
                         <p>Amazon Web Services (AWS)</p>
@@ -72,7 +110,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2><Trans id="cv.education" /></h2>
+                        <h2>{t.education}</h2>
                         <h3>Warsaw University of Technology</h3>
                         <p><b>The Faculty of Electronics and Information Technology | 2016 - Jun 2022</b></p>
                         <p>Major in Computer Science with focus on Computer Systems and Networks. Professional title
@@ -82,7 +120,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2><Trans id="cv.certification" /></h2>
+                        <h2>{t.certification}</h2>
                         <p>Test Driven Development by Bottega</p>
                         <p>Scaled Agile, Inc. logo
                             Certified SAFe® 5 Practitioner</p>
@@ -90,10 +128,10 @@ const WorkCv = () => {
                     </section>
 
                     <section>
-                        <h2><Trans id="cv.languages" /></h2>
-                        <p><b><Trans id="cv.polish" /></b> <Trans id="cv.native" /></p>
-                        <p><b><Trans id="cv.english" /></b> <Trans id="cv.professional" /></p>
-                        <p><b><Trans id="cv.german" /></b> <Trans id="cv.elementary" /></p>
+                        <h2>{t.languages}</h2>
+                        <p><b>{t.polish}</b> {t.native}</p>
+                        <p><b>{t.english}</b> {t.professional}</p>
+                        <p><b>{t.german}</b> {t.elementary}</p>
                     </section>
 
                 </div>
@@ -101,7 +139,7 @@ const WorkCv = () => {
 
                     <section>
 
-                        <h2><Trans id="cv.workExperience" /></h2>
+                        <h2>{t.workExperience}</h2>
 
                         <h3>Regular Java Developer</h3>
                         <p><b>Circle K | Aug 2022 - Now</b></p>
@@ -151,7 +189,7 @@ const WorkCv = () => {
         </div>
         <div className="export-button-container">
             <button className="export-button" onClick={handleExportPdf}>
-                <FontAwesomeIcon icon={faFileDownload} /> <Trans id="cv.exportPdf" />
+                <FontAwesomeIcon icon={faFileDownload} /> {t.exportPdf}
             </button>
         </div>
     </div>

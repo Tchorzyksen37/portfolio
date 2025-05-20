@@ -3,12 +3,46 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { exportToPdf } from '../utils/pdfExport';
-import { Trans } from '@lingui/macro';
 import { useLanguage } from '../context/LanguageContext';
 import './styles.css';
 
 const UniCv = () => {
     const { language } = useLanguage();
+    
+    const translations = {
+        en: {
+            contact: "CONTACT",
+            education: "EDUCATION",
+            workExperience: "WORK EXPERIENCE",
+            skills: "SKILLS",
+            languages: "LANGUAGES",
+            interests: "INTERESTS",
+            exportPdf: "Export as PDF",
+            polish: "Polish",
+            english: "English",
+            german: "German",
+            native: "Native",
+            collaborationFramework: "Collaboration Framework",
+            interestsText: "In my free time, I am active in the Student Sailing Club of Warsaw University of Technology (SKŻ). I am licensed to operate inland and maritime yachts. My goal is to lead an independent sea voyage. My interests also include rollerblading and ice skating. From 2017 to 2019, I was a member of the Night Skating Team, which organizes night rollerblading rides through the streets of Warsaw. In the evenings, I also work on my own web application and solve various coding challenges like Advent of Code and tasks on the LeetCode platform. In summary, I enjoy learning new patterns, gaining knowledge, and sharing it with others."
+        },
+        pl: {
+            contact: "KONTAKT",
+            education: "EDUKACJA",
+            workExperience: "DOŚWIADCZENIE ZAWODOWE",
+            skills: "UMIEJĘTNOŚCI",
+            languages: "JĘZYKI",
+            interests: "ZAINTERESOWANIA",
+            exportPdf: "Eksportuj jako PDF",
+            polish: "Polski",
+            english: "Angielski",
+            german: "Niemiecki",
+            native: "Ojczysty",
+            collaborationFramework: "Metodyka współpracy",
+            interestsText: "W wolnym czasie jestem aktywny w Studenckim Klubie Żeglarskim Politechniki Warszawskiej (SKŻ). Posiadam uprawnienia do prowadzenia jachtów śródlądowych i morskich. Moim celem jest poprowadzenie samodzielnego rejsu morskiego. Moje zainteresowania obejmują również jazdę na rolkach i łyżwach. W latach 2017-2019 byłem członkiem Night Skating Team, który organizuje nocne przejazdy na rolkach ulicami Warszawy. Wieczorami pracuję również nad własną aplikacją internetową i rozwiązuję różne wyzwania programistyczne, takie jak Advent of Code i zadania na platformie LeetCode. Podsumowując, lubię uczyć się nowych wzorców, zdobywać wiedzę i dzielić się nią z innymi."
+        }
+    };
+    
+    const t = translations[language];
     
     const handleExportPdf = () => {
         exportToPdf('uni-cv-content', `Michal_Tchorzewski_${language === 'en' ? 'Academic' : 'Akademickie'}_CV`);
@@ -60,7 +94,7 @@ const UniCv = () => {
             <div className="col-sm">
                 <section>
 
-                    <h2><Trans id="cv.contact" /></h2>
+                    <h2>{t.contact}</h2>
 
                     <p>
                         <FontAwesomeIcon icon={faPhone} /> <a href="tel:+48511213765">+48 511 213 765</a>
@@ -79,7 +113,7 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2><Trans id="cv.education" /></h2>
+                    <h2>{t.education}</h2>
                     <h3>Warsaw University of Technology</h3>
                     <p><b>Faculty of Electronics and Information Technology | 2016 - June 2022</b></p>
                     <p>
@@ -92,7 +126,7 @@ const UniCv = () => {
 
                 <section className="new-page">
 
-                    <h2><Trans id="cv.workExperience" /></h2>
+                    <h2>{t.workExperience}</h2>
 
                     <h3>Senior Software Engineer</h3>
                     <p><b>Visa</b> | April 2024 - Present</p>
@@ -119,7 +153,7 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2><Trans id="cv.skills" /></h2>
+                    <h2>{t.skills}</h2>
                     <p><b>Programming languages:</b> Java, Kotlin, Groovy, Python, Type Script, Java Script, SQL</p>
                     <p><b>Frameworks:</b> Spring, Angular</p>
                     <p><b>Test Frameworks:</b> Spock, JUnit</p>
@@ -129,23 +163,23 @@ const UniCv = () => {
                     <p><b>CD/CI pipelines:</b> GitHub Actions, Jenkins</p>
                     <p><b>Containerization Platform:</b> Docker, Kubernetes</p>
                     <p><b>Event Platform</b> Kafka</p>
-                    <p><b><Trans id="cv.collaborationFramework" />:</b> Scrum / Agile</p>
+                    <p><b>{t.collaborationFramework}:</b> Scrum / Agile</p>
 
                 </section>
 
                 <section>
 
-                    <h2><Trans id="cv.languages" /></h2>
-                    <p><b><Trans id="cv.polish" /></b> <Trans id="cv.native" /></p>
-                    <p><b><Trans id="cv.english" /></b> C1</p>
-                    <p><b><Trans id="cv.german" /></b> A2</p>
+                    <h2>{t.languages}</h2>
+                    <p><b>{t.polish}</b> {t.native}</p>
+                    <p><b>{t.english}</b> C1</p>
+                    <p><b>{t.german}</b> A2</p>
 
                 </section>
 
                 <section className="new-page">
 
-                    <h2><Trans id="cv.interests" /></h2>
-                    <p><Trans id="cv.interestsText" /></p>
+                    <h2>{t.interests}</h2>
+                    <p>{t.interestsText}</p>
 
                 </section>
 
@@ -156,7 +190,7 @@ const UniCv = () => {
         </div>
         <div className="export-button-container">
             <button className="export-button" onClick={handleExportPdf}>
-                <FontAwesomeIcon icon={faFileDownload} /> <Trans id="cv.exportPdf" />
+                <FontAwesomeIcon icon={faFileDownload} /> {t.exportPdf}
             </button>
         </div>
     </div>
