@@ -25,14 +25,21 @@ const WorkCv = () => {
                     <hr />
                     <section>
 
-                        <h2>ABOUT</h2>
+                        <h2>{language === 'en' ? 'ABOUT' : 'O MNIE'}</h2>
                         <p>
-                            I studied at the Faculty of Electronics
+                            {language === 'en' ? 
+                            `I studied at the Faculty of Electronics
                             and Information Technology on Warsaw University of Technology
                             with a concentration in Computer Science. I'm a very dedicated
                             and goal-oriented person. Once I choose to pursue a certain
                             activity, I put in the effort to accomplish it with the best results
-                            possible. Moreover, I'm cooperative and a great team player.
+                            possible. Moreover, I'm cooperative and a great team player.` : 
+                            `Studiowałem na Wydziale Elektroniki i Technik Informacyjnych
+                            Politechniki Warszawskiej ze specjalizacją w Informatyce.
+                            Jestem bardzo zaangażowaną i zorientowaną na cel osobą.
+                            Gdy decyduję się na podjęcie określonego działania,
+                            wkładam wysiłek, aby osiągnąć jak najlepsze rezultaty.
+                            Ponadto, jestem kooperatywny i świetnie pracuję w zespole.`}
                         </p>
 
                     </section>
