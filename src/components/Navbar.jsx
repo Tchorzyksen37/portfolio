@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../context/LanguageContext';
-import { useTranslation } from 'react-i18next';
+import { Trans } from '@lingui/macro';
 
 const Navbar = () => {
-  const { toggleLanguage } = useLanguage();
-  const { t, i18n } = useTranslation();
+  const { toggleLanguage, language } = useLanguage();
   const location = useLocation();
   const isHomePage = location.pathname === '/';
 
@@ -16,18 +15,18 @@ const Navbar = () => {
   return (
     <nav className="custom-navbar">
         <div className="navbar-container">
-            <Link className="navbar-brand" to="/">{t('navbar.title')}</Link>        
+            <Link className="navbar-brand" to="/"><Trans id="navbar.title" /></Link>        
             <ul className="navbar-links">
                 <li className="nav-item">
-                    <Link className="nav-link" to="/uni-cv">{t('navbar.academic')}</Link>
+                    <Link className="nav-link" to="/uni-cv"><Trans id="navbar.academic" /></Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to="/work-cv">{t('navbar.professional')}</Link>
+                    <Link className="nav-link" to="/work-cv"><Trans id="navbar.professional" /></Link>
                 </li>
             </ul>
             <div className="language-toggle">
                 <button onClick={toggleLanguage} className="lang-btn">
-                    {i18n.language === 'en' ? 'PL' : 'EN'}
+                    {language === 'en' ? 'PL' : 'EN'}
                 </button>
             </div>
         </div>

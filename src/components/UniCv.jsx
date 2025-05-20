@@ -3,14 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faFileDownload } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { exportToPdf } from '../utils/pdfExport';
-import { useTranslation } from 'react-i18next';
+import { Trans } from '@lingui/macro';
+import { useLanguage } from '../context/LanguageContext';
 import './styles.css';
 
 const UniCv = () => {
-    const { t, i18n } = useTranslation();
+    const { language } = useLanguage();
     
     const handleExportPdf = () => {
-        exportToPdf('uni-cv-content', `Michal_Tchorzewski_${i18n.language === 'en' ? 'Academic' : 'Akademickie'}_CV`);
+        exportToPdf('uni-cv-content', `Michal_Tchorzewski_${language === 'en' ? 'Academic' : 'Akademickie'}_CV`);
     };
 
     return (
@@ -59,7 +60,7 @@ const UniCv = () => {
             <div className="col-sm">
                 <section>
 
-                    <h2>{t('cv.contact')}</h2>
+                    <h2><Trans id="cv.contact" /></h2>
 
                     <p>
                         <FontAwesomeIcon icon={faPhone} /> <a href="tel:+48511213765">+48 511 213 765</a>
@@ -78,7 +79,7 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2>{t('cv.education')}</h2>
+                    <h2><Trans id="cv.education" /></h2>
                     <h3>Warsaw University of Technology</h3>
                     <p><b>Faculty of Electronics and Information Technology | 2016 - June 2022</b></p>
                     <p>
@@ -91,7 +92,7 @@ const UniCv = () => {
 
                 <section className="new-page">
 
-                    <h2>{t('cv.workExperience')}</h2>
+                    <h2><Trans id="cv.workExperience" /></h2>
 
                     <h3>Senior Software Engineer</h3>
                     <p><b>Visa</b> | April 2024 - Present</p>
@@ -118,33 +119,33 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2>{t('cv.skills')}</h2>
+                    <h2><Trans id="cv.skills" /></h2>
                     <p><b>Programming languages:</b> Java, Kotlin, Groovy, Python, Type Script, Java Script, SQL</p>
                     <p><b>Frameworks:</b> Spring, Angular</p>
                     <p><b>Test Frameworks:</b> Spock, JUnit</p>
-                    <p><b>Cloud:</b> {language === 'en' ? 'Amazon Web Services (AWS)' : 'Amazon Web Services (AWS)'}</p>
+                    <p><b>Cloud:</b> Amazon Web Services (AWS)</p>
                     <p><b>Databases:</b> {language === 'en' ? 'Relational databases (PostgreSQL) and document databases (MongoDB)' : 'Bazy danych relacyjne (PostgreSQL) i dokumentowe (MongoDB)'}</p>
                     <p><b>VCS:</b> Git</p>
                     <p><b>CD/CI pipelines:</b> GitHub Actions, Jenkins</p>
                     <p><b>Containerization Platform:</b> Docker, Kubernetes</p>
                     <p><b>Event Platform</b> Kafka</p>
-                    <p><b>{language === 'en' ? 'Collaboration Framework' : 'Metodyka współpracy'}:</b> Scrum / Agile</p>
+                    <p><b><Trans id="cv.collaborationFramework" />:</b> Scrum / Agile</p>
 
                 </section>
 
                 <section>
 
-                    <h2>{t('cv.languages')}</h2>
-                    <p><b>{t('cv.polish')}</b> {t('cv.native')}</p>
-                    <p><b>{t('cv.english')}</b> C1</p>
-                    <p><b>{t('cv.german')}</b> A2</p>
+                    <h2><Trans id="cv.languages" /></h2>
+                    <p><b><Trans id="cv.polish" /></b> <Trans id="cv.native" /></p>
+                    <p><b><Trans id="cv.english" /></b> C1</p>
+                    <p><b><Trans id="cv.german" /></b> A2</p>
 
                 </section>
 
                 <section className="new-page">
 
-                    <h2>{t('cv.interests')}</h2>
-                    <p>{t('cv.interestsText')}</p>
+                    <h2><Trans id="cv.interests" /></h2>
+                    <p><Trans id="cv.interestsText" /></p>
 
                 </section>
 
@@ -155,7 +156,7 @@ const UniCv = () => {
         </div>
         <div className="export-button-container">
             <button className="export-button" onClick={handleExportPdf}>
-                <FontAwesomeIcon icon={faFileDownload} /> {t('cv.exportPdf')}
+                <FontAwesomeIcon icon={faFileDownload} /> <Trans id="cv.exportPdf" />
             </button>
         </div>
     </div>
