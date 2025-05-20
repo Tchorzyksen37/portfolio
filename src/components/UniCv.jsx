@@ -59,7 +59,7 @@ const UniCv = () => {
             <div className="col-sm">
                 <section>
 
-                    <h2>CONTACT</h2>
+                    <h2>{language === 'en' ? 'CONTACT' : 'KONTAKT'}</h2>
 
                     <p>
                         <FontAwesomeIcon icon={faPhone} /> <a href="tel:+48511213765">+48 511 213 765</a>
@@ -78,7 +78,7 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2>Education</h2>
+                    <h2>{language === 'en' ? 'EDUCATION' : 'EDUKACJA'}</h2>
                     <h3>Warsaw University of Technology</h3>
                     <p><b>Faculty of Electronics and Information Technology | 2016 - June 2022</b></p>
                     <p>
@@ -91,7 +91,7 @@ const UniCv = () => {
 
                 <section className="new-page">
 
-                    <h2>WORK EXPERIENCE</h2>
+                    <h2>{language === 'en' ? 'WORK EXPERIENCE' : 'DOŚWIADCZENIE ZAWODOWE'}</h2>
 
                     <h3>Senior Software Engineer</h3>
                     <p><b>Visa</b> | April 2024 - Present</p>
@@ -118,32 +118,32 @@ const UniCv = () => {
 
                 <section>
 
-                    <h2>SKILLS</h2>
+                    <h2>{language === 'en' ? 'SKILLS' : 'UMIEJĘTNOŚCI'}</h2>
                     <p><b>Programming languages:</b> Java, Kotlin, Groovy, Python, Type Script, Java Script, SQL</p>
                     <p><b>Frameworks:</b> Spring, Angular</p>
                     <p><b>Test Frameworks:</b> Spock, JUnit</p>
-                    <p><b>Cloaud:</b> Amazon Web Services (AWS)</p>
-                    <p><b>Databases:</b> Bazy danych relacyjne (Postgresql) i dokumentowe (Mongodb)</p>
+                    <p><b>Cloud:</b> {language === 'en' ? 'Amazon Web Services (AWS)' : 'Amazon Web Services (AWS)'}</p>
+                    <p><b>Databases:</b> {language === 'en' ? 'Relational databases (PostgreSQL) and document databases (MongoDB)' : 'Bazy danych relacyjne (PostgreSQL) i dokumentowe (MongoDB)'}</p>
                     <p><b>VCS:</b> Git</p>
                     <p><b>CD/CI pipelines:</b> GitHub Actions, Jenkins</p>
                     <p><b>Containerization Platform:</b> Docker, Kubernetes</p>
                     <p><b>Event Platform</b> Kafka</p>
-                    <p><b>Colaboration Framework:</b> Scrum / Agile</p>
+                    <p><b>{language === 'en' ? 'Collaboration Framework' : 'Metodyka współpracy'}:</b> Scrum / Agile</p>
 
                 </section>
 
                 <section>
 
-                    <h2>LANGUAGES</h2>
-                    <p><b>Polish</b> Native</p>
-                    <p><b>English</b> C1</p>
-                    <p><b>German</b> A2</p>
+                    <h2>{language === 'en' ? 'LANGUAGES' : 'JĘZYKI'}</h2>
+                    <p><b>{language === 'en' ? 'Polish' : 'Polski'}</b> {language === 'en' ? 'Native' : 'Ojczysty'}</p>
+                    <p><b>{language === 'en' ? 'English' : 'Angielski'}</b> C1</p>
+                    <p><b>{language === 'en' ? 'German' : 'Niemiecki'}</b> A2</p>
 
                 </section>
 
                 <section className="new-page">
 
-                    <h2>INTREESTS</h2>
+                    <h2>{language === 'en' ? 'INTERESTS' : 'ZAINTERESOWANIA'}</h2>
                     <p>
                         In my free time, I am active in the Student Sailing Club of Warsaw University of Technology (SKŻ). 
                         I am licensed to operate inland and maritime yachts. My goal is to lead an independent sea voyage.
@@ -162,7 +162,7 @@ const UniCv = () => {
         </div>
         <div className="export-button-container">
             <button className="export-button" onClick={handleExportPdf}>
-                <FontAwesomeIcon icon={faFileDownload} /> Export as PDF
+                <FontAwesomeIcon icon={faFileDownload} /> {language === 'en' ? 'Export as PDF' : 'Eksportuj jako PDF'}
             </button>
         </div>
     </div>

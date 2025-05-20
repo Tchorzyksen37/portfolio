@@ -261,12 +261,25 @@ li {
 .row {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 -15px;
 }
 
 .col-sm, .col-xl {
     flex: 1;
     padding: 0 15px;
     min-width: 300px;
+    box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .col-sm, .col-xl {
+        width: 100%;
+        margin-bottom: 1.5em;
+    }
 }
 
 /* Ensure content doesn't break across pages when printing */
