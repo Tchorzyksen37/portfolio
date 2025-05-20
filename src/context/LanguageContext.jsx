@@ -1,17 +1,45 @@
-import React, { createContext, useContext } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { i18n } from '@lingui/core';
+import { en, pl } from 'make-plural/plurals';
+import { messages as enMessages } from '../locales/en/messages';
+import { messages as plMessages } from '../locales/pl/messages';
+
+// Initialize Lingui
+i18n.loadLocaleData({
+  en: { plurals: en },
+  pl: { plurals: pl }
+});
+
+// Load messages
+i18n.load({
+  en: enMessages,
+  pl: plMessages
+});
+
+// Set initial locale
+const initialLocale = localStorage.getItem('language') || 'en';
+i18n.activate(initialLocale);
 
 const LanguageContext = createContext();
 
 export const LanguageProvider = ({ children }) => {
-  const { i18n } = useTranslation();
-  
-  const language = i18n.language;
+  const [language, setLanguage] = useState(initialLocale);
   
   const toggleLanguage = () => {
     const newLang = language === 'en' ? 'pl' : 'en';
-    i18n.changeLanguage(newLang);
+    setLanguage(newLang);
+    i18n.activate(newLang);
+    localStorage.setItem('language', newLang);
   };
+
+  // Initialize language from localStorage
+  useEffect(() => {
+    const savedLanguage = localStorage.getItem('language');
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+      i18n.activate(savedLanguage);
+    }
+  }, []);
 
   return (
     <LanguageContext.Provider value={{ language, toggleLanguage }}>
