@@ -12,7 +12,7 @@ export default function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/portfolio" element={<Home />} />
           <Route path="/uni-cv" element={<UniCv />} />
           <Route path="/work-cv" element={<WorkCv/>} />
         </Routes>

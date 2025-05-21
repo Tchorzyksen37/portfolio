@@ -29,7 +29,7 @@ const Navbar = () => {
   return (
     <nav className="custom-navbar">
         <div className="navbar-container">
-            <Link className="navbar-brand" to="/">{t.title}</Link>        
+            <Link className="navbar-brand" to="/portfolio">{t.title}</Link>        
             <ul className="navbar-links">
                 <li className="nav-item">
                     <Link className="nav-link" to="/uni-cv">{t.academic}</Link>
