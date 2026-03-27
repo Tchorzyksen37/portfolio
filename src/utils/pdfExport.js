@@ -3,9 +3,10 @@ import { jsPDF } from 'jspdf';
 
 export const exportToPdf = (elementId, filename) => {
   const element = document.getElementById(elementId);
-  
+
   if (!element) {
     console.error(`Element with ID ${elementId} not found`);
+    alert(`Error: Could not find content to export (${elementId})`);
     return;
   }
   
@@ -52,24 +53,24 @@ export const exportToPdf = (elementId, filename) => {
       format: 'a4',
       compress: true
     });
-    
+
     // A4 dimensions with margins
     const pageWidth = 210;
     const pageHeight = 297;
     const margin = 10;
     const contentWidth = pageWidth - (2 * margin);
     const contentHeight = pageHeight - (2 * margin);
-    
+
     const imgWidth = contentWidth;
     const imgHeight = (canvas.height * imgWidth) / canvas.width;
-    
+
     let heightLeft = imgHeight;
     let position = 0;
-    
+
     // Add first page
     pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
     heightLeft -= contentHeight;
-    
+
     // Add new pages if content overflows
     while (heightLeft > 0) {
       position = heightLeft - imgHeight;
@@ -77,10 +78,14 @@ export const exportToPdf = (elementId, filename) => {
       pdf.addImage(imgData, 'PNG', margin, position + margin, imgWidth, imgHeight);
       heightLeft -= contentHeight;
     }
-    
+
     // Remove the clone from the DOM
     document.body.removeChild(clone);
-    
+
     pdf.save(`${filename}.pdf`);
+  }).catch(error => {
+    console.error('Error generating PDF:', error);
+    document.body.removeChild(clone);
+    alert('Error generating PDF. Please try again.');
   });
 };

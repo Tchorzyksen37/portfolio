@@ -102,20 +102,23 @@ const NeuralBackground = () => {
       animationFrameId = window.requestAnimationFrame(draw);
     };
 
-    // Initialize
-    window.addEventListener('resize', () => {
+    // Handle resize event
+    const handleResize = () => {
       resizeCanvas();
       initNodes();
-    });
+    };
+
+    // Initialize
+    window.addEventListener('resize', handleResize);
     window.addEventListener('mousemove', handleMouseMove);
-    
+
     resizeCanvas();
     initNodes();
     draw();
-    
+
     // Cleanup
     return () => {
-      window.removeEventListener('resize', resizeCanvas);
+      window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.cancelAnimationFrame(animationFrameId);
     };

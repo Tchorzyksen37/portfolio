@@ -135,7 +135,7 @@ const WorkCv = () => {
                     </section>
 
                 </div>
-                <div class="col-sm">
+                <div className="col-sm">
 
                     <section>
 
@@ -179,7 +179,7 @@ const WorkCv = () => {
                         <p>Maintenance, I learnt how difficult legacy systems are to learn programming.</p>
 
                         <h3>Data Analyst</h3>
-                        <p><b>Abplanalp Sp. z o.o. | Jul 2018 - Spe 2018</b></p>
+                        <p><b>Abplanalp Sp. z o.o. | Jul 2018 - Aug 2018</b></p>
                         <p>Automation of business processes.</p>
                     </section>
 
