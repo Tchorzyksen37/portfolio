@@ -9,7 +9,7 @@ import { LanguageProvider } from './context/LanguageContext';
 export default function App() {
   return (
     <LanguageProvider>
-      <Router>
+      <Router basename="/portfolio">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
