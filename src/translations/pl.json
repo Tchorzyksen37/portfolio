@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "title": "Curriculum Vitae",
+    "academic": "Akademickie",
+    "professional": "Zawodowe"
+  },
+  "home": {
+    "title": "Inżynier Oprogramowania i Entuzjasta AI",
+    "welcome": "Witaj na mojej stronie portfolio. Poznaj moją zawodową drogę i wykształcenie.",
+    "professionalCV": "CV Zawodowe",
+    "academicCV": "CV Akademickie"
+  },
+  "common": {
+    "contact": "KONTAKT",
+    "education": "EDUKACJA",
+    "workExperience": "DOŚWIADCZENIE ZAWODOWE",
+    "skills": "UMIEJĘTNOŚCI",
+    "languages": "JĘZYKI",
+    "exportPdf": "Eksportuj jako PDF",
+    "polish": "Polski",
+    "english": "Angielski",
+    "german": "Niemiecki",
+    "native": "Ojczysty"
+  },
+  "uniCv": {
+    "about": "O MNIE",
+    "aboutParagraph1": "W 2016 roku rozpocząłem studia na Wydziale Elektroniki i Technik Informacyjnych Politechniki Warszawskiej, na kierunku Informatyka prowadzonym w języku angielskim. W pierwszym roku byłem członkiem Wydziałowej Rady Studentów EiTI i delegatem do Komisji Informacji i Promocji (KIP). W trzecim semestrze zdecydowałem się nauczyć języka programowania Java, a wkrótce potem otrzymałem swoją pierwszą pracę w branży. W kolejnych latach łączyłem rozwój zawodowy z obowiązkami akademickimi. Awansowałem w hierarchii korporacyjnej, co wymagało większego zaangażowania w pracę zawodową, co skutkowało opóźnieniem w ukończeniu studiów licencjackich. Ostatecznie w 2022 roku obroniłem pracę dyplomową pt. \"Eksploracja wiedzy o pacjentach COVID-19 i budowa systemu eksperckiego\" i zdałem egzamin z wynikiem powyżej dobrego.",
+    "aboutParagraph2": "Obecnie pracuję jako programista na stanowisku Senior Software Engineer w nowo otwartym oddziale międzynarodowej korporacji Visa. Moje obowiązki obejmują utrzymanie i rozwój aplikacji webowych. Moim planem jest rozwój w dziedzinie architektury systemów rozproszonych oraz eksploracja tego, jak sztuczna inteligencja (AI) może zmienić świat i wpłynąć na usługi oferowane użytkownikom końcowym.",
+    "aboutParagraph3": "Pomimo pracy nad systemami i aplikacjami, nie stronię od zadań manualnych, takich jak budowanie obwodów, podłączanie kabli czy lutowanie.",
+    "aboutParagraph4": "Moje oczekiwania wobec studiów magisterskich to poszerzenie wiedzy w zakresie rozwoju systemów i sztucznej inteligencji. Szukam pracy nad angażującymi projektami, które dają możliwości kreatywnego myślenia i zachęcają do wysiłku związanego z nabywaniem nowej wiedzy.",
+    "educationEntries": [
+      {
+        "institution": "Politechnika Warszawska",
+        "faculty": "Wydział Elektroniki i Technik Informacyjnych",
+        "period": "2016 - czerwiec 2022",
+        "description": "Kierunek: Informatyka, Specjalizacja: Systemy Komputerowe i Sieci. Uzyskany tytuł zawodowy: Inżynier.",
+        "thesis": "Eksploracja wiedzy o pacjentach COVID-19 i budowa systemu eksperckiego"
+      }
+    ],
+    "jobs": [
+      { "title": "Senior Software Engineer", "company": "Visa", "period": "kwiecień 2024 - obecnie" },
+      { "title": "Software Developer", "company": "Circle K", "period": "sierpień 2022 - kwiecień 2024" },
+      { "title": "Regular Java Developer", "company": "Luxoft", "period": "kwiecień 2022 - lipiec 2022" },
+      { "title": "Consultant", "company": "Netcompany", "period": "październik 2020 - marzec 2022" },
+      { "title": "Junior Java Developer", "company": "Accenture", "period": "maj 2019 - październik 2019" },
+      { "title": "Data Analyst", "company": "Abplanalp", "period": "lipiec 2018 - sierpień 2018" }
+    ],
+    "skillsEntries": [
+      { "label": "Języki programowania", "value": "Java, Kotlin, Groovy, Python, TypeScript, JavaScript, SQL" },
+      { "label": "Frameworki", "value": "Spring, React" },
+      { "label": "Frameworki testowe", "value": "Spock, JUnit" },
+      { "label": "Chmura", "value": "Amazon Web Services (AWS)" },
+      { "label": "Bazy danych", "value": "Relacyjne i dokumentowe" },
+      { "label": "VCS", "value": "Git" },
+      { "label": "Pipelines CD/CI", "value": "GitHub Actions, Jenkins" },
+      { "label": "Konteneryzacja", "value": "Docker, Kubernetes" },
+      { "label": "Platforma zdarzeń", "value": "Kafka" },
+      { "label": "Metodyka współpracy", "value": "Scrum / Agile" }
+    ],
+    "interests": "ZAINTERESOWANIA",
+    "interestsText": "W wolnym czasie jestem aktywny w Studenckim Klubie Żeglarskim Politechniki Warszawskiej (SKŻ). Posiadam uprawnienia do prowadzenia jachtów śródlądowych i morskich. Moim celem jest poprowadzenie samodzielnego rejsu morskiego. Moje zainteresowania obejmują również jazdę na rolkach i łyżwach. W latach 2017-2019 byłem członkiem Night Skating Team, który organizuje nocne przejazdy na rolkach ulicami Warszawy. Wieczorami pracuję również nad własną aplikacją internetową i rozwiązuję różne wyzwania programistyczne, takie jak Advent of Code i zadania na platformie LeetCode. Podsumowując, lubię uczyć się nowych wzorców, zdobywać wiedzę i dzielić się nią z innymi."
+  },
+  "workCv": {
+    "about": "O MNIE",
+    "aboutText": "Studiowałem na Wydziale Elektroniki i Technik Informacyjnych Politechniki Warszawskiej ze specjalizacją w Informatyce. Jestem bardzo zaangażowaną i zorientowaną na cel osobą. Gdy decyduję się na podjęcie określonego działania, wkładam wysiłek, aby osiągnąć jak najlepsze rezultaty. Ponadto, jestem kooperatywny i świetnie pracuję w zespole.",
+    "certification": "CERTYFIKATY I SZKOLENIA ZEWNĘTRZNE",
+    "proficiencyProfessional": "Biegły",
+    "proficiencyElementary": "Podstawowy",
+    "skillsList": [
+      "Java, Spring Boot, Groovy, Spock",
+      "TypeScript, React",
+      "Amazon Web Services (AWS)",
+      "Bazy danych relacyjne",
+      "Bazy danych dokumentowe",
+      "Git, GitHub Actions, Jenkins",
+      "Docker, Kubernetes",
+      "Kafka, Amazon SQS i SNS",
+      "Python, Kotlin"
+    ],
+    "educationEntries": [
+      {
+        "institution": "Politechnika Warszawska",
+        "faculty": "Wydział Elektroniki i Technik Informacyjnych",
+        "period": "2016 - cze 2022",
+        "description": "Kierunek: Informatyka ze specjalizacją Systemy Komputerowe i Sieci. Uzyskany tytuł zawodowy: Inżynier",
+        "thesis": "Eksploracja bazy danych pacjentów COVID-19 i opracowanie systemu eksperckiego"
+      },
+      {
+        "institution": "Politechnika Warszawska",
+        "faculty": "Wydział Elektryczny",
+        "period": "2024 - cze 2026",
+        "description": "Kierunek: Informatyka Stosowana. Uzyskany tytuł zawodowy: Magister Inżynier",
+        "thesis": "Analiza przydatności niskwymiarowej wizualizacji danych telemetrycznych do identyfikacji anomalii bezpieczeństwa w rozproszonych aplikacjach webowych"
+      }
+    ],
+    "certificationsList": [
+      "Test Driven Development by Bottega",
+      "Certified SAFe® 5 Practitioner",
+      "Microsoft Certified: Azure Fundamentals"
+    ],
+    "jobs": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Visa",
+        "period": "kwi 2024 - obecnie",
+        "description": "Rozwój i utrzymanie skalowalnych rozwiązań programistycznych. Systemy przetwarzania płatności.",
+        "bullets": [
+          "Zdobyłem doświadczenie w tworzeniu oprogramowania w branży finansowej",
+          "Nauczyłem się React i Vert.x",
+          "Codzienne wykorzystanie asystentów AI i autonomicznych agentów AI do przyspieszenia pracy i rozwiązywania problemów"
+        ]
+      },
+      {
+        "title": "Regular Java Developer",
+        "company": "Circle K",
+        "period": "sie 2022 - mar 2024",
+        "description": "Główne obowiązki: utrzymanie i rozwój monolitycznej aplikacji Spring Boot oraz frontendu. Główna funkcjonalność to udostępnianie zestawu narzędzi użytkownikowi końcowemu do zarządzania zasobami i zbierania różnych podsumowań danych.",
+        "bulletsIntro": "Doświadczenia zdobyte podczas pracy",
+        "bullets": [
+          "Zdobyłem doświadczenie w tworzeniu aplikacji jednostronicowej w Angular",
+          "Przeprowadziłem migrację z bazy dokumentowej do relacyjnej w Pythonie",
+          "Zdobyłem praktyczne doświadczenie w procesie integracji z różnymi dostawcami i systemami",
+          "Poszerzyłem wiedzę na temat usług AWS",
+          "Poprawiłem umiejętności debugowania i pisania testów automatycznych, szczególnie przy dodawaniu nowego kodu do istniejącej bazy kodu"
+        ]
+      },
+      {
+        "title": "Regular Java Developer",
+        "company": "Luxoft",
+        "period": "kwi 2022 - lip 2022",
+        "description": "Utrzymanie wbudowanej aplikacji Java i rozwój mikroserwisów napisanych w GoLang."
+      },
+      {
+        "title": "Consultant",
+        "company": "Netcompany",
+        "period": "paź 2020 - mar 2022",
+        "description": "Rozwój systemu Digital Post Denmark (mit.dk, digst.dk).",
+        "bulletsIntro": "Najważniejsze rzeczy, których się nauczyłem",
+        "bullets": [
+          "Architektura mikroserwisów",
+          "Podstawy Kafka",
+          "Podstawy Docker i Kubernetes",
+          "Znaczenie różnych rodzajów testów"
+        ]
+      },
+      {
+        "title": "Junior Java Developer",
+        "company": "Accenture",
+        "period": "maj 2019 - paź 2019",
+        "description": "Utrzymanie systemu. Nauczyłem się, jak trudna jest praca z systemami legacy."
+      },
+      {
+        "title": "Data Analyst",
+        "company": "Abplanalp Sp. z o.o.",
+        "period": "lip 2018 - sie 2018",
+        "description": "Automatyzacja procesów biznesowych."
+      }
+    ]
+  }
+}

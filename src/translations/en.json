@@ -1,0 +1,160 @@
+{
+  "nav": {
+    "title": "Curriculum Vitae",
+    "academic": "Academic",
+    "professional": "Professional"
+  },
+  "home": {
+    "title": "Software Engineer and AI Enthusiast",
+    "welcome": "Welcome to my portfolio website. Explore my professional journey and academic background.",
+    "professionalCV": "Professional CV",
+    "academicCV": "Academic CV"
+  },
+  "common": {
+    "contact": "CONTACT",
+    "education": "EDUCATION",
+    "workExperience": "WORK EXPERIENCE",
+    "skills": "SKILLS",
+    "languages": "LANGUAGES",
+    "exportPdf": "Export as PDF",
+    "polish": "Polish",
+    "english": "English",
+    "german": "German",
+    "native": "Native"
+  },
+  "uniCv": {
+    "about": "ABOUT",
+    "aboutParagraph1": "In 2016, I began my studies at the Faculty of Electronics and Information Technology at Warsaw University of Technology, pursuing a degree in Computer Science taught in English. During my first year, I was a member of the Faculty Student Council of EiTI and delegated to the Information and Promotion Committee (KIP). In the third semester, I decided to learn the Java programming language, and shortly thereafter, I obtained my first job in the industry. In the following years, I balanced my professional development with academic responsibilities. I advanced in the corporate ladder, which required greater commitment to my professional work, resulting in a delay in completing my undergraduate studies. Finally, in 2022, I submitted my thesis titled \"Knowledge discovery of covid-19 patients and construction of an expert system\" and passed the exam with a result above good.",
+    "aboutParagraph2": "Currently, I work as a programmer in the position of Senior Software Engineer at the newly opened branch of the international corporation Visa. My responsibilities include maintaining and developing web applications. My plan is to advance in the field of distributed systems architecture and explore how artificial intelligence (AI) can change the world and impact the services offered to end users.",
+    "aboutParagraph3": "Despite working on systems and applications, I do not shy away from manual tasks such as building circuits, connecting cables, or soldering.",
+    "aboutParagraph4": "My expectations for my master's studies are to expand my knowledge in system development and artificial intelligence. I seek to work on engaging projects that provide opportunities for creative thinking and encourage the effort involved in acquiring new knowledge.",
+    "educationEntries": [
+      {
+        "institution": "Warsaw University of Technology",
+        "faculty": "Faculty of Electronics and Information Technology",
+        "period": "2016 - June 2022",
+        "description": "Field of Study: Computer Science, Specialization: Computer Systems and Networks. Degree Obtained: Bachelor of Science in Engineering.",
+        "thesis": "Knowledge discovery of covid-19 patients and construction of an expert system"
+      }
+    ],
+    "jobs": [
+      { "title": "Senior Software Engineer", "company": "Visa", "period": "April 2024 - Present" },
+      { "title": "Software Developer", "company": "Circle K", "period": "August 2022 - April 2024" },
+      { "title": "Regular Java Developer", "company": "Luxoft", "period": "April 2022 - July 2022" },
+      { "title": "Consultant", "company": "Netcompany", "period": "October 2020 - March 2022" },
+      { "title": "Junior Java Developer", "company": "Accenture", "period": "May 2019 - October 2019" },
+      { "title": "Data Analyst", "company": "Abplanalp", "period": "July 2018 - August 2018" }
+    ],
+    "skillsEntries": [
+      { "label": "Programming languages", "value": "Java, Kotlin, Groovy, Python, TypeScript, JavaScript, SQL" },
+      { "label": "Frameworks", "value": "Spring, React" },
+      { "label": "Test Frameworks", "value": "Spock, JUnit" },
+      { "label": "Cloud", "value": "Amazon Web Services (AWS)" },
+      { "label": "Databases", "value": "Relational and document databases" },
+      { "label": "VCS", "value": "Git" },
+      { "label": "CD/CI pipelines", "value": "GitHub Actions, Jenkins" },
+      { "label": "Containerization Platform", "value": "Docker, Kubernetes" },
+      { "label": "Event Platform", "value": "Kafka" },
+      { "label": "Collaboration Framework", "value": "Scrum / Agile" }
+    ],
+    "interests": "INTERESTS",
+    "interestsText": "In my free time, I am active in the Student Sailing Club of Warsaw University of Technology (SKŻ). I am licensed to operate inland and maritime yachts. My goal is to lead an independent sea voyage. My interests also include rollerblading and ice skating. From 2017 to 2019, I was a member of the Night Skating Team, which organizes night rollerblading rides through the streets of Warsaw. In the evenings, I also work on my own web application and solve various coding challenges like Advent of Code and tasks on the LeetCode platform. In summary, I enjoy learning new patterns, gaining knowledge, and sharing it with others."
+  },
+  "workCv": {
+    "about": "ABOUT",
+    "aboutText": "I studied at the Faculty of Electronics and Information Technology on Warsaw University of Technology with a concentration in Computer Science. I'm a very dedicated and goal-oriented person. Once I choose to pursue a certain activity, I put in the effort to accomplish it with the best results possible. Moreover, I'm cooperative and a great team player.",
+    "certification": "CERTIFICATION AND EXTERNAL TRAININGS",
+    "proficiencyProfessional": "Professional working proficiency",
+    "proficiencyElementary": "Elementary proficiency",
+    "skillsList": [
+      "Java, Spring Boot, Groovy, Spock",
+      "TypeScript, React",
+      "Amazon Web Services (AWS)",
+      "Relational Databases",
+      "Document Databases",
+      "Git, GitHub Actions, Jenkins",
+      "Docker, Kubernetes",
+      "Kafka, Amazon SQS and SNS",
+      "Python, Kotlin"
+    ],
+    "educationEntries": [
+      {
+        "institution": "Warsaw University of Technology",
+        "faculty": "The Faculty of Electronics and Information Technology",
+        "period": "2016 - Jun 2022",
+        "description": "Major in Computer Science with focus on Computer Systems and Networks. Professional title conferred: Bachelor of Science in Engineering",
+        "thesis": "Knowledge discovery of covid-19 patients and construction of an expert system"
+      },
+      {
+        "institution": "Warsaw University of Technology",
+        "faculty": "The Faculty of Electrical Engineering",
+        "period": "2024 - Jun 2026",
+        "description": "Major in Applied Computer Science. Professional title conferred: Master of Science in Engineering",
+        "thesis": "Analysis of the Usefulness of Low-Dimensional Visualization of Telemetry Data for Identifying Security Anomalies in Distributed Web Applications"
+      }
+    ],
+    "certificationsList": [
+      "Test Driven Development by Bottega",
+      "Certified SAFe® 5 Practitioner",
+      "Microsoft Certified: Azure Fundamentals"
+    ],
+    "jobs": [
+      {
+        "title": "Senior Software Engineer",
+        "company": "Visa",
+        "period": "Apr 2024 - Present",
+        "description": "Development and maintenance of scalable software solutions. Payment processing systems.",
+        "bullets": [
+          "Gained experience in development of software solutions in the financial industry",
+          "Learnt React and Vert.x",
+          "Daily use of AI chat assistants and autonomous AI agents to accelerate development and problem solving"
+        ]
+      },
+      {
+        "title": "Regular Java Developer",
+        "company": "Circle K",
+        "period": "Aug 2022 - Mar 2024",
+        "description": "Main responsibilities: maintenance and development of both a monolith Spring Boot application and frontend. The main functionality is to expose a set of tools to the end-user for resource management and gathering various data summaries.",
+        "bulletsIntro": "Some of the experience I got working here",
+        "bullets": [
+          "Acquired experience in development of single page application in Angular",
+          "Carried out migration from document to relational database in Python",
+          "Gathered hands on experience in process of integration to various vendors and systems",
+          "Gained more knowledge of AWS services",
+          "Improved debugging and writing automated tests skills, especially when adding new code to the old code base"
+        ]
+      },
+      {
+        "title": "Regular Java Developer",
+        "company": "Luxoft",
+        "period": "Apr 2022 - Jul 2022",
+        "description": "Maintenance of embedded Java application and development of microservices written in GoLang."
+      },
+      {
+        "title": "Consultant",
+        "company": "Netcompany",
+        "period": "Oct 2020 - Mar 2022",
+        "description": "Development of Digital Post Denmark (mit.dk, digst.dk).",
+        "bulletsIntro": "Top things I learnt",
+        "bullets": [
+          "Microservices architecture",
+          "Basics of Kafka",
+          "Basics of Docker and Kubernetes",
+          "Importance of various tests"
+        ]
+      },
+      {
+        "title": "Junior Java Developer",
+        "company": "Accenture",
+        "period": "May 2019 - Oct 2019",
+        "description": "Maintenance. I learnt how difficult legacy systems are to work with."
+      },
+      {
+        "title": "Data Analyst",
+        "company": "Abplanalp Sp. z o.o.",
+        "period": "Jul 2018 - Aug 2018",
+        "description": "Automation of business processes."
+      }
+    ]
+  }
+}

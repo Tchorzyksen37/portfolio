@@ -1,28 +1,12 @@
 import React from "react";
 import NeuralBackground from "./NeuralBackground";
 import { Link } from "react-router-dom";
-import { useLanguage } from "../context/LanguageContext";
+import { useTranslation } from "../translations";
 import "./styles.css";
 
 const Home = () => {
-    const { language } = useLanguage();
-    const translations = {
-        en: {
-            title: "Software Engineer and AI Enthusiast",
-            welcome: "Welcome to my portfolio website. Explore my professional journey and academic background.",
-            professionalCV: "Professional CV",
-            academicCV: "Academic CV"
-        },
-        pl: {
-            title: "Inżynier Oprogramowania i Entuzjasta AI",
-            welcome: "Witaj na mojej stronie portfolio. Poznaj moją zawodową drogę i wykształcenie.",
-            professionalCV: "CV Zawodowe",
-            academicCV: "CV Akademickie"
-        }
-    };
-    
-    const t = translations[language];
-    
+    const t = useTranslation('home');
+
     return (
         <div className="home-container">
             <NeuralBackground />
