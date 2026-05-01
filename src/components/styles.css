@@ -176,6 +176,16 @@ li {
     color: #2c5364;
 }
 
+/* Home page navbar overlay */
+.home-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
 /* Home page styles */
 .home-container {
     height: 100vh;
