@@ -1,91 +1,151 @@
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 
+const A4_PX = 794;
+
+// Collect {top, bottom} bands for every text element, relative to the clone top.
+function collectElementBands(clone) {
+  const cloneTop = clone.getBoundingClientRect().top;
+  const bands = [];
+  clone.querySelectorAll('p, li, h1, h2, h3').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const top = Math.round(rect.top - cloneTop);
+    const bottom = Math.round(rect.bottom - cloneTop);
+    if (bottom > top && top >= 0) bands.push({ top, bottom });
+  });
+  return bands;
+}
+
+// Find the largest y ≤ idealBreak (and > pageStart) where no element from either
+// column straddles the cut. Falls back to idealBreak when nothing better exists.
+function safeBreakBefore(elementBands, idealBreak, pageStart) {
+  // Candidate positions: every element bottom that sits before the ideal break.
+  const candidates = elementBands
+    .map(b => b.bottom)
+    .filter(y => y > pageStart && y < idealBreak)
+    .sort((a, b) => b - a); // descending — check closest to idealBreak first
+
+  for (const candidate of candidates) {
+    const straddled = elementBands.some(b => b.top < candidate && b.bottom > candidate);
+    if (!straddled) return candidate;
+  }
+
+  return idealBreak; // no clean gap found, cut at the ideal position
+}
+
+function smartPageBreaks(elementBands, pageHeightPx, totalHeight) {
+  const breaks = [0];
+  let pageStart = 0;
+
+  while (pageStart + pageHeightPx < totalHeight) {
+    const idealBreak = pageStart + pageHeightPx;
+    const smartBreak = safeBreakBefore(elementBands, idealBreak, pageStart);
+    breaks.push(smartBreak);
+    pageStart = smartBreak;
+  }
+
+  breaks.push(totalHeight);
+  return breaks;
+}
+
+function sliceCanvas(source, startY, endY) {
+  const offscreen = document.createElement('canvas');
+  offscreen.width = source.width;
+  offscreen.height = endY - startY;
+  offscreen.getContext('2d').drawImage(
+    source,
+    0, startY, source.width, endY - startY,
+    0, 0,      source.width, endY - startY
+  );
+  return offscreen.toDataURL('image/png');
+}
+
 export const exportToPdf = (elementId, filename) => {
   const element = document.getElementById(elementId);
-
   if (!element) {
-    console.error(`Element with ID ${elementId} not found`);
     alert(`Error: Could not find content to export (${elementId})`);
     return;
   }
-  
-  // Create a clone of the element to avoid modifying the original
+
   const clone = element.cloneNode(true);
-  document.body.appendChild(clone);
+
   clone.style.position = 'absolute';
   clone.style.left = '-9999px';
-  clone.style.top = '-9999px';
-  
-  // Apply print-specific styles to the clone
-  const sections = clone.querySelectorAll('section');
-  sections.forEach(section => {
-    section.style.pageBreakInside = 'avoid';
-    section.style.marginBottom = '20px';
+  clone.style.top = '0';
+  clone.style.width = `${A4_PX}px`;
+  clone.style.padding = '15px 40px';
+  clone.style.boxSizing = 'border-box';
+  clone.style.backgroundColor = 'white';
+  clone.style.fontSize = '12px';
+  clone.style.lineHeight = '1.5';
+
+  // Force two-column layout regardless of current viewport width.
+  clone.querySelectorAll('.row').forEach(row => {
+    row.style.display = 'flex';
+    row.style.flexDirection = 'row';
+    row.style.flexWrap = 'nowrap';
   });
-  
-  const headings = clone.querySelectorAll('h2, h3');
-  headings.forEach(heading => {
-    heading.style.pageBreakAfter = 'avoid';
-    heading.style.marginTop = '15px';
+  clone.querySelectorAll('.col-sm').forEach(col => {
+    col.style.width = '50%';
+    col.style.minWidth = '0';
+    col.style.flex = '0 0 50%';
+    col.style.boxSizing = 'border-box';
   });
-  
-  // Add margins for better PDF layout
-  clone.style.padding = '15mm';
-  clone.style.width = '170mm'; // A4 width minus margins
-  
+
+  document.body.appendChild(clone);
+
+  // Measure element positions while the clone is in the DOM.
+  const bandsClone = collectElementBands(clone);
+
   html2canvas(clone, {
     scale: 2,
     useCORS: true,
     logging: false,
     allowTaint: true,
-    windowWidth: 1200, // Fixed width for consistent rendering
-    windowHeight: element.scrollHeight,
+    windowWidth: A4_PX,
     x: 0,
     y: 0,
     scrollX: 0,
-    scrollY: 0
+    scrollY: 0,
   }).then(canvas => {
-    const imgData = canvas.toDataURL('image/png');
+    document.body.removeChild(clone);
+
+    const MARGIN = 15;
+    const CONTENT_W = 210 - 2 * MARGIN;
+    const CONTENT_H = 297 - 2 * MARGIN;
+    const mmPerPx = CONTENT_W / canvas.width;
+    const pageHeightPx = CONTENT_H / mmPerPx;
+
+    // html2canvas scale=2 means canvas pixels = 2 × clone pixels.
+    const bandsPx = bandsClone.map(b => ({ top: b.top * 2, bottom: b.bottom * 2 }));
+
+    const breaks = smartPageBreaks(bandsPx, pageHeightPx, canvas.height);
+
     const pdf = new jsPDF({
       orientation: 'portrait',
       unit: 'mm',
       format: 'a4',
-      compress: true
+      compress: true,
     });
 
-    // A4 dimensions with margins
-    const pageWidth = 210;
-    const pageHeight = 297;
-    const margin = 10;
-    const contentWidth = pageWidth - (2 * margin);
-    const contentHeight = pageHeight - (2 * margin);
-
-    const imgWidth = contentWidth;
-    const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-    let heightLeft = imgHeight;
-    let position = 0;
-
-    // Add first page
-    pdf.addImage(imgData, 'PNG', margin, margin, imgWidth, imgHeight);
-    heightLeft -= contentHeight;
-
-    // Add new pages if content overflows
-    while (heightLeft > 0) {
-      position = heightLeft - imgHeight;
-      pdf.addPage();
-      pdf.addImage(imgData, 'PNG', margin, position + margin, imgWidth, imgHeight);
-      heightLeft -= contentHeight;
+    for (let i = 0; i < breaks.length - 1; i++) {
+      if (i > 0) pdf.addPage();
+      const startY = breaks[i];
+      const endY = breaks[i + 1];
+      pdf.addImage(
+        sliceCanvas(canvas, startY, endY),
+        'PNG',
+        MARGIN,
+        MARGIN,
+        CONTENT_W,
+        (endY - startY) * mmPerPx
+      );
     }
-
-    // Remove the clone from the DOM
-    document.body.removeChild(clone);
 
     pdf.save(`${filename}.pdf`);
   }).catch(error => {
     console.error('Error generating PDF:', error);
-    document.body.removeChild(clone);
+    if (document.body.contains(clone)) document.body.removeChild(clone);
     alert('Error generating PDF. Please try again.');
   });
 };
