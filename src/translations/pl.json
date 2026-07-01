@@ -62,35 +62,37 @@
   },
   "workCv": {
     "about": "O MNIE",
-    "aboutText": "Studiowałem na Wydziale Elektroniki i Technik Informacyjnych Politechniki Warszawskiej ze specjalizacją w Informatyce. Jestem bardzo zaangażowaną i zorientowaną na cel osobą. Gdy decyduję się na podjęcie określonego działania, wkładam wysiłek, aby osiągnąć jak najlepsze rezultaty. Ponadto, jestem kooperatywny i świetnie pracuję w zespole.",
+    "aboutText": "Senior Software Engineer z ponad 6-letnim doświadczeniem w budowaniu i utrzymywaniu skalowalnych systemów backendowych, obecnie specjalizujący się w infrastrukturze płatniczej w Visa. Rozległe praktyczne doświadczenie w orkiestracji płatności, integracji wielu metod płatności oraz projektowaniu podstawowych przepływów transakcyjnych w rozproszonych usługach o wysokiej dostępności. Inżynier backendu z zamiłowania (Java, Vert.x, Spring Boot) z produkcyjnym doświadczeniem w AWS i architekturach sterowanych zdarzeniami. Świeżo ukończony stopień magistra ukierunkowany na obserwowalność systemów rozproszonych i analitykę telemetrii; wczesny i biegły użytkownik inżynierii wspieranej przez AI — budujący własne agenty Claude, wtyczki oraz narzędzia oparte na Model Context Protocol (MCP) automatyzujące cykl wytwarzania oprogramowania.",
     "certification": "CERTYFIKATY I SZKOLENIA ZEWNĘTRZNE",
     "proficiencyProfessional": "Biegły",
     "proficiencyElementary": "Podstawowy",
     "skillsList": [
-      "Java, Spring Boot, Groovy, Spock",
-      "TypeScript, React",
-      "Amazon Web Services (AWS)",
-      "Bazy danych relacyjne",
-      "Bazy danych dokumentowe",
-      "Git, GitHub Actions, Jenkins",
+      "Orkiestracja płatności i przepływy transakcyjne",
+      "Java, Vert.x, Spring Boot, Groovy, Spock",
+      "Systemy rozproszone i architektura sterowana zdarzeniami",
+      "Amazon Web Services (AWS), Kafka, SQS/SNS",
       "Docker, Kubernetes",
-      "Kafka, Amazon SQS i SNS",
+      "Obserwowalność systemów i analityka telemetrii",
+      "Inżynieria wspierana przez AI: Claude, autonomiczne agenty, MCP",
+      "TypeScript, React, Angular",
+      "Bazy danych relacyjne i dokumentowe",
+      "Git, GitHub Actions, Jenkins",
       "Python, Kotlin"
     ],
     "educationEntries": [
+      {
+        "institution": "Politechnika Warszawska",
+        "faculty": "Wydział Elektryczny",
+        "period": "2024 - cze 2026",
+        "description": "Kierunek: Informatyka Stosowana. Uzyskany tytuł zawodowy: Magister Inżynier. Ukierunkowanie: zaawansowane badania nad obserwowalnością systemów rozproszonych, analizą wysokowymiarowych metryk, potokami danych telemetrycznych oraz zautomatyzowanym monitorowaniem bezpieczeństwa systemów.",
+        "thesis": "Analiza przydatności niskowymiarowej wizualizacji danych telemetrycznych do identyfikacji anomalii bezpieczeństwa w rozproszonych aplikacjach webowych"
+      },
       {
         "institution": "Politechnika Warszawska",
         "faculty": "Wydział Elektroniki i Technik Informacyjnych",
         "period": "2016 - cze 2022",
         "description": "Kierunek: Informatyka ze specjalizacją Systemy Komputerowe i Sieci. Uzyskany tytuł zawodowy: Inżynier",
         "thesis": "Eksploracja bazy danych pacjentów COVID-19 i opracowanie systemu eksperckiego"
-      },
-      {
-        "institution": "Politechnika Warszawska",
-        "faculty": "Wydział Elektryczny",
-        "period": "2024 - cze 2026",
-        "description": "Kierunek: Informatyka Stosowana. Uzyskany tytuł zawodowy: Magister Inżynier",
-        "thesis": "Analiza przydatności niskwymiarowej wizualizacji danych telemetrycznych do identyfikacji anomalii bezpieczeństwa w rozproszonych aplikacjach webowych"
       }
     ],
     "certificationsList": [
@@ -103,57 +105,56 @@
         "title": "Senior Software Engineer",
         "company": "Visa",
         "period": "kwi 2024 - obecnie",
-        "description": "Rozwój i utrzymanie skalowalnych rozwiązań programistycznych. Systemy przetwarzania płatności.",
+        "description": "Inżynier platformy płatniczej umożliwiającej klientom integrację z szeroką gamą metod płatności w różnorodnych konfiguracjach — budowa warstwy orkiestracji oraz podstawowych przepływów transakcyjnych, które routują i przetwarzają płatności na dużą skalę.",
         "bullets": [
-          "Zdobyłem doświadczenie w tworzeniu oprogramowania w branży finansowej",
-          "Nauczyłem się React i Vert.x",
-          "Codzienne wykorzystanie asystentów AI i autonomicznych agentów AI do przyspieszenia pracy i rozwiązywania problemów"
+          "Zaprojektowałem i dostarczyłem funkcje orkiestracji płatności umożliwiające klientom integrację wielu metod płatności w elastycznych, konfigurowalnych przepływach transakcyjnych",
+          "Zbudowałem wydajne usługi backendowe w Java i Vert.x, stosując reaktywne, sterowane zdarzeniami wzorce spełniające wymagania dostępności i opóźnień przetwarzania transakcji klasy finansowej",
+          "Zaprojektowałem architekturę komponentów w ramach rozproszonej platformy płatniczej, wzmacniając niezawodność i poprawność podstawowych przepływów transakcyjnych",
+          "Zautomatyzowałem znaczną część procesu wytwarzania oprogramowania przy użyciu Claude — budując własne wtyczki, umiejętności i dedykowane autonomiczne agenty oraz integrując narzędzia poprzez Model Context Protocol (MCP)",
+          "Zbudowałem interfejsy integracyjne skierowane do klientów w React"
         ]
       },
       {
-        "title": "Regular Java Developer",
+        "title": "Software Developer",
         "company": "Circle K",
         "period": "sie 2022 - mar 2024",
-        "description": "Główne obowiązki: utrzymanie i rozwój monolitycznej aplikacji Spring Boot oraz frontendu. Główna funkcjonalność to udostępnianie zestawu narzędzi użytkownikowi końcowemu do zarządzania zasobami i zbierania różnych podsumowań danych.",
-        "bulletsIntro": "Doświadczenia zdobyte podczas pracy",
+        "description": "Odpowiadałem za rozwój i utrzymanie platformy Spring Boot oraz jej frontendu, udostępniając użytkownikom końcowym narzędzia do zarządzania zasobami i raportowania podsumowań danych.",
         "bullets": [
-          "Zdobyłem doświadczenie w tworzeniu aplikacji jednostronicowej w Angular",
-          "Przeprowadziłem migrację z bazy dokumentowej do relacyjnej w Pythonie",
-          "Zdobyłem praktyczne doświadczenie w procesie integracji z różnymi dostawcami i systemami",
-          "Poszerzyłem wiedzę na temat usług AWS",
-          "Poprawiłem umiejętności debugowania i pisania testów automatycznych, szczególnie przy dodawaniu nowego kodu do istniejącej bazy kodu"
+          "Przeprowadziłem migrację z bazy dokumentowej do relacyjnej w Pythonie, poprawiając integralność danych i wydajność zapytań",
+          "Dostarczyłem integracje z wieloma zewnętrznymi dostawcami i systemami, zapewniając niezawodną wymianę danych między heterogenicznymi platformami",
+          "Zbudowałem aplikację jednostronicową w Angular i rozwinąłem podstawowe usługi backendowe w Spring Boot",
+          "Rozszerzyłem wykorzystanie usług AWS na potrzeby skalowalnych operacji w chmurze",
+          "Wzmocniłem niezawodność systemu, dodając automatyczne testy i poprawiając możliwości debugowania w dojrzałej, obciążonej kodem legacy bazie kodu"
         ]
       },
       {
         "title": "Regular Java Developer",
         "company": "Luxoft",
         "period": "kwi 2022 - lip 2022",
-        "description": "Utrzymanie wbudowanej aplikacji Java i rozwój mikroserwisów napisanych w GoLang."
+        "description": "Utrzymywałem wbudowaną aplikację Java i rozwijałem mikroserwisy w Go, współtworząc wielojęzyczny krajobraz usług."
       },
       {
         "title": "Consultant",
         "company": "Netcompany",
         "period": "paź 2020 - mar 2022",
-        "description": "Rozwój systemu Digital Post Denmark (mit.dk, digst.dk).",
-        "bulletsIntro": "Najważniejsze rzeczy, których się nauczyłem",
+        "description": "Współtworzyłem system Digital Post Denmark (mit.dk, digst.dk), ogólnokrajową platformę komunikacji cyfrowej.",
         "bullets": [
-          "Architektura mikroserwisów",
-          "Podstawy Kafka",
-          "Podstawy Docker i Kubernetes",
-          "Znaczenie różnych rodzajów testów"
+          "Zbudowałem usługi w architekturze mikroserwisów z wykorzystaniem komunikacji sterowanej zdarzeniami w Kafka",
+          "Wdrożyłem i utrzymywałem skonteneryzowane usługi przy użyciu Docker i Kubernetes",
+          "Ustanowiłem rygorystyczne praktyki testowania na granicach usług"
         ]
       },
       {
         "title": "Junior Java Developer",
         "company": "Accenture",
         "period": "maj 2019 - paź 2019",
-        "description": "Utrzymanie systemu. Nauczyłem się, jak trudna jest praca z systemami legacy."
+        "description": "Utrzymywałem korporacyjne systemy legacy, wypracowując praktyczne strategie bezpiecznego rozwijania długowiecznych baz kodu."
       },
       {
         "title": "Data Analyst",
         "company": "Abplanalp Sp. z o.o.",
         "period": "lip 2018 - sie 2018",
-        "description": "Automatyzacja procesów biznesowych."
+        "description": "Zautomatyzowałem procesy biznesowe, ograniczając ręczną obsługę danych."
       }
     ]
   }

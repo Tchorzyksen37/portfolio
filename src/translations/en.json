@@ -62,35 +62,37 @@
   },
   "workCv": {
     "about": "ABOUT",
-    "aboutText": "I studied at the Faculty of Electronics and Information Technology on Warsaw University of Technology with a concentration in Computer Science. I'm a very dedicated and goal-oriented person. Once I choose to pursue a certain activity, I put in the effort to accomplish it with the best results possible. Moreover, I'm cooperative and a great team player.",
+    "aboutText": "Senior Software Engineer with 6+ years building and operating scalable backend systems, currently specializing in payment infrastructure at Visa. Deep hands-on experience with payment orchestration, multi-method integration, and core transaction flows across distributed, high-availability services. Backend engineer by craft (Java, Vert.x, Spring Boot) with production experience on AWS and event-driven architectures. Recently completed an M.Sc. focused on distributed-systems observability and telemetry analytics, and an early, fluent adopter of AI-assisted engineering — building custom Claude agents, plugins, and Model Context Protocol (MCP) tooling to automate the development lifecycle.",
     "certification": "CERTIFICATION AND EXTERNAL TRAININGS",
     "proficiencyProfessional": "Professional working proficiency",
     "proficiencyElementary": "Elementary proficiency",
     "skillsList": [
-      "Java, Spring Boot, Groovy, Spock",
-      "TypeScript, React",
-      "Amazon Web Services (AWS)",
-      "Relational Databases",
-      "Document Databases",
-      "Git, GitHub Actions, Jenkins",
+      "Payment Orchestration & Transaction Flows",
+      "Java, Vert.x, Spring Boot, Groovy, Spock",
+      "Distributed Systems & Event-Driven Architecture",
+      "Amazon Web Services (AWS), Kafka, SQS/SNS",
       "Docker, Kubernetes",
-      "Kafka, Amazon SQS and SNS",
+      "System Observability & Telemetry Analytics",
+      "AI-Assisted Engineering: Claude, Autonomous Agents, MCP",
+      "TypeScript, React, Angular",
+      "Relational & Document Databases",
+      "Git, GitHub Actions, Jenkins",
       "Python, Kotlin"
     ],
     "educationEntries": [
+      {
+        "institution": "Warsaw University of Technology",
+        "faculty": "The Faculty of Electrical Engineering",
+        "period": "2024 - Jun 2026",
+        "description": "Major in Applied Computer Science. Professional title conferred: Master of Science in Engineering. Focus: Advanced research in distributed-systems observability, high-dimensional metrics analysis, telemetry data pipelines, and automated system security monitoring.",
+        "thesis": "Analysis of the Usefulness of Low-Dimensional Visualization of Telemetry Data for Identifying Security Anomalies in Distributed Web Applications"
+      },
       {
         "institution": "Warsaw University of Technology",
         "faculty": "The Faculty of Electronics and Information Technology",
         "period": "2016 - Jun 2022",
         "description": "Major in Computer Science with focus on Computer Systems and Networks. Professional title conferred: Bachelor of Science in Engineering",
         "thesis": "Knowledge discovery of covid-19 patients and construction of an expert system"
-      },
-      {
-        "institution": "Warsaw University of Technology",
-        "faculty": "The Faculty of Electrical Engineering",
-        "period": "2024 - Jun 2026",
-        "description": "Major in Applied Computer Science. Professional title conferred: Master of Science in Engineering",
-        "thesis": "Analysis of the Usefulness of Low-Dimensional Visualization of Telemetry Data for Identifying Security Anomalies in Distributed Web Applications"
       }
     ],
     "certificationsList": [
@@ -103,57 +105,56 @@
         "title": "Senior Software Engineer",
         "company": "Visa",
         "period": "Apr 2024 - Present",
-        "description": "Development and maintenance of scalable software solutions. Payment processing systems.",
+        "description": "Engineer on a payment platform that enables clients to integrate with a wide range of payment methods across diverse configurations — building the orchestration layer and core transaction flows that route and process payments at scale.",
         "bullets": [
-          "Gained experience in development of software solutions in the financial industry",
-          "Learnt React and Vert.x",
-          "Daily use of AI chat assistants and autonomous AI agents to accelerate development and problem solving"
+          "Designed and delivered payment-orchestration capabilities enabling clients to integrate multiple payment methods in flexible, configurable transaction flows",
+          "Engineered high-throughput backend services in Java and Vert.x, applying reactive, event-driven patterns to meet the availability and latency demands of financial-grade transaction processing",
+          "Architected components within a distributed payment platform, hardening core transaction flows for reliability and correctness",
+          "Automated significant portions of the development workflow using Claude — building custom plugins, skills, and dedicated autonomous agents, and integrating tooling via the Model Context Protocol (MCP)",
+          "Built client-facing integration interfaces in React"
         ]
       },
       {
-        "title": "Regular Java Developer",
+        "title": "Software Developer",
         "company": "Circle K",
         "period": "Aug 2022 - Mar 2024",
-        "description": "Main responsibilities: maintenance and development of both a monolith Spring Boot application and frontend. The main functionality is to expose a set of tools to the end-user for resource management and gathering various data summaries.",
-        "bulletsIntro": "Some of the experience I got working here",
+        "description": "Owned development and maintenance of a Spring Boot platform and its frontend, exposing resource-management tools and data-summary reporting to end users.",
         "bullets": [
-          "Acquired experience in development of single page application in Angular",
-          "Carried out migration from document to relational database in Python",
-          "Gathered hands on experience in process of integration to various vendors and systems",
-          "Gained more knowledge of AWS services",
-          "Improved debugging and writing automated tests skills, especially when adding new code to the old code base"
+          "Spearheaded migration from a document database to a relational database in Python, improving data integrity and query performance",
+          "Delivered integrations to multiple external vendors and systems, establishing reliable data exchange across heterogeneous platforms",
+          "Developed a single-page application in Angular and extended core backend services in Spring Boot",
+          "Expanded the platform's use of AWS services for scalable cloud operations",
+          "Strengthened system reliability by adding automated test coverage and improving debuggability across a mature, legacy-heavy codebase"
         ]
       },
       {
         "title": "Regular Java Developer",
         "company": "Luxoft",
         "period": "Apr 2022 - Jul 2022",
-        "description": "Maintenance of embedded Java application and development of microservices written in GoLang."
+        "description": "Maintained an embedded Java application and developed microservices in Go, contributing to a polyglot service landscape."
       },
       {
         "title": "Consultant",
         "company": "Netcompany",
         "period": "Oct 2020 - Mar 2022",
-        "description": "Development of Digital Post Denmark (mit.dk, digst.dk).",
-        "bulletsIntro": "Top things I learnt",
+        "description": "Contributed to Digital Post Denmark (mit.dk, digst.dk), a nationwide digital communications platform.",
         "bullets": [
-          "Microservices architecture",
-          "Basics of Kafka",
-          "Basics of Docker and Kubernetes",
-          "Importance of various tests"
+          "Built services within a microservices architecture using event-driven messaging with Kafka",
+          "Deployed and operated containerized services using Docker and Kubernetes",
+          "Established rigorous testing practices across service boundaries"
         ]
       },
       {
         "title": "Junior Java Developer",
         "company": "Accenture",
         "period": "May 2019 - Oct 2019",
-        "description": "Maintenance. I learnt how difficult legacy systems are to work with."
+        "description": "Maintained enterprise legacy systems, developing practical strategies for safely evolving long-lived codebases."
       },
       {
         "title": "Data Analyst",
         "company": "Abplanalp Sp. z o.o.",
         "period": "Jul 2018 - Aug 2018",
-        "description": "Automation of business processes."
+        "description": "Automated business processes, reducing manual data-handling effort."
       }
     ]
   }
